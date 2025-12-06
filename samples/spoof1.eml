@@ -1,0 +1,1202 @@
+Delivered-To: glenwil2005@gmail.com
+Received: by 2002:a98:a311:0:b0:255:3a22:17df with SMTP id h17csp544566eid;
+        Fri, 5 Dec 2025 04:32:51 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEgJ55wcytborfwWD2wmPkMpcQbwms03KajjSV4Q847TKrzH9D8xk9Bc7y7DbrN2aVR4x7z
+X-Received: by 2002:a05:600c:1c9a:b0:477:54cd:202e with SMTP id 5b1f17b1804b1-4792aed9fdfmr110280775e9.2.1764937971316;
+        Fri, 05 Dec 2025 04:32:51 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1764937971; cv=none;
+        d=google.com; s=arc-20240605;
+        b=KK5t+Wb9FOH/CLsq3vIE7e/PzDsvZLGg44+5vrDBhRyPKAHicLlavUpZPZiSH++fNT
+         s2zp+CVbCU8orTahuUF+Hn0ChT2hOSYofMi1wZkj/thHSrfco8Q5GawElu/SxQA8ySry
+         +VeYX2ow7OoVOaNzs/E2PxmW6/w75aZpdLiUkAfVXkSe4IFbRGr3yhF9eoFU1tuMpBWf
+         Ok5xcYUzab9vFbtgSC/XDiqR0HEpB9FTfhoWtUf2SqFexsZiARkBjBgTzxi7NovrviM7
+         KXbXoHfvBNG0hh1JdphJ4rd+LCB3SyNaQXoLPPP3Y/qLvMyZc6X30jvoWl9h656YImpW
+         jZvQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=reply-to:message-id:mime-version:list-unsubscribe-post
+         :list-unsubscribe:list-id:from:feedback-id:date:subject:to
+         :dkim-signature:dkim-signature;
+        bh=cUvfEgTpoWcVIlKN/j2bBvWORjiji/VNuefQRoUEhF0=;
+        fh=F+/ifJCIM6unVXaWnmp/wni7yp57D8AkMKL5I9rMvrw=;
+        b=UfCRA1M1dVHc8Us7nuM7JIM8rzyPfjRtafPq0CGE/+GtZBbKqsm5hxoAWQXyqkHfF/
+         hV6uMKNYfVq7OFblxKsUFrc84culUT15KGjQVVx/K8Wg7NK1p+mABF3xiNT7Q4WerTWe
+         eor+Pr23/vl8MCR8sRfsfTAZEPKEuQmxdvqS4cQh1jcUkQrRDqSoVnAMC/upV8UQZKfF
+         JcFEVVasLap6gBp5NBi+YhaL5hVI7T4eL7GZb1VHcXc+xqU4XUI9cKek4Z9R3Er8gsRR
+         KlIEJB+kcS76mJ9jL36ewOJBWEHKrVbNaD7P35TR5GlsghvTgVKCuq/WnZJdRuqlGLrk
+         oiiA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@taplio.com header.s=mail header.b=cecKbyUt;
+       dkim=pass header.i=@mailin.fr header.s=mail header.b=nhqc7Vtc;
+       spf=pass (google.com: domain of bounces-7v7ct-josquin=taplio.com@im.d.sender-sib.com designates 77.32.148.65 as permitted sender) smtp.mailfrom="bounces-7v7ct-josquin=taplio.com@im.d.sender-sib.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=taplio.com
+Return-Path: <bounces-7v7ct-josquin=taplio.com@im.d.sender-sib.com>
+Received: from im.d.sender-sib.com (im.d.sender-sib.com. [77.32.148.65])
+        by mx.google.com with ESMTPS id 5b1f17b1804b1-479310ad819si24374415e9.18.2025.12.05.04.32.51
+        for <glenwil2005@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 05 Dec 2025 04:32:51 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces-7v7ct-josquin=taplio.com@im.d.sender-sib.com designates 77.32.148.65 as permitted sender) client-ip=77.32.148.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@taplio.com header.s=mail header.b=cecKbyUt;
+       dkim=pass header.i=@mailin.fr header.s=mail header.b=nhqc7Vtc;
+       spf=pass (google.com: domain of bounces-7v7ct-josquin=taplio.com@im.d.sender-sib.com designates 77.32.148.65 as permitted sender) smtp.mailfrom="bounces-7v7ct-josquin=taplio.com@im.d.sender-sib.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=taplio.com
+DKIM-Signature: a=rsa-sha256; bh=cUvfEgTpoWcVIlKN/j2bBvWORjiji/VNuefQRoUEhF0=;
+ c=relaxed/relaxed; d=taplio.com;
+ h=to:cc:from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe:x-csa-complaints:list-unsubscribe-post:message-id:sender:x-sib-id:x-mailin-client:x-mailin-campaign:feedback-id:bimi-selector;
+ q=dns/txt; s=mail; t=1764937928; v=1;
+ b=cecKbyUt+3UQp/yMBZ8bmcv6UguaNrW9b6kCuhv31OZGUqRW4Jn+LTpOYnc/82kwE10j6qFf
+ SVFLJz3txcEy1roIpRu78raE7neaT4W/BbMBgdTOPJXHrnP6WtfoCoH0ZPjzfGNh9Zzgk/f2NB3
+ bpMj/xCN0Po64cNK88D+zNRI=
+DKIM-Signature: a=rsa-sha256; bh=cUvfEgTpoWcVIlKN/j2bBvWORjiji/VNuefQRoUEhF0=;
+ c=relaxed/relaxed; d=mailin.fr;
+ h=to:cc:from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe:x-csa-complaints:list-unsubscribe-post:message-id:sender:x-sib-id:x-mailin-client:x-mailin-campaign:feedback-id:bimi-selector;
+ q=dns/txt; s=mail; t=1764937928; v=1;
+ b=nhqc7Vtc1NUvE7rLzcnyEQZPowDJaATKMgD8qLd5HwdXpw7DYjUao+4N2kGqNmKtUXU91TNh
+ GyUrXKdPCb9V7DmXktcxW4QZJZ6owWNPTzymHHjf5/1FtL9XBem98rBmeeWEXDT1aK8QPS13JFz
+ 28N+1Rau+2qaaP7NrF9SUG0w=
+To: <glenwil2005@gmail.com>
+Subject: =?utf-8?q?30%_OFF_all_Taplio_Plans_=E2=80=A2_16h_Left?=
+Content-Type: multipart/alternative; boundary="-------?=_21924-9041497254429"
+Date: Fri, 05 Dec 2025 12:32:08 +0000
+Feedback-ID: 77.32.148.65:4512625_372:4512625:Sendinblue
+From: Josquin from Taplio <josquin@taplio.com>
+List-Id: NDUxMjYyNS0zNTkwOTYtMA== <NDUxMjYyNS0zNTkwOTYtMA==.list-id.mailin.fr>
+List-Unsubscribe: <mailto:unsubscribe@im.d.sender-sib.com?subject=unsub-6qxuezer8stfbj&body=6qxuezer8stfbj>,<https://7v7ct.r.ag.d.sendibm3.com/mk/un/li/sh/7nVTPdbLJ2bPbZZrkwU4r8YuEPfbMGq/jc_Him2zFC39>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+Message-Id: <202505121232.6qxuezer8stfbj@im.d.sender-sib.com>
+Reply-To: <josquin@taplio.com>
+X-Csa-Complaints: csa-complaints@eco.de
+X-Mailer: Sendinblue
+X-Mailin-Campaign: 372
+X-Mailin-Client: 4512625
+X-sib-id: _PGrnUdfaJ4caTAV1PixjG3QDzXcNF7E5muBM9ckdiRc4XKSFK5bWCoKxFFJHw0gpJ_OXaciwPC7CO960UPnxGxr2bxXwDtEbd8bgAKVOoUyY0bqYvsJ8PKT1UN2QR7ZV6-Wec5lB0yp10gJBWBbhp0uq1ZTNHof7EWGly5JvBmzN9-OKbOmeFUB_XkrkDR4nDbewwGN2itsdVfj8fFb3SKlmoglEerWXc0
+
+---------?=_21924-9041497254429
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+16h left...
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+Only sale of the year
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+is ending soon...
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+Our Black Friday deal is live for a limited time ! Apply coupon code BF30 a=
+t checkout to save 30% on any order
+
+[ Get Deal](https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2nfuMSVpMif=
+7PjzB6yytGZkK/tzwzBCLqm5q0 "try outreach feature")
+
+
+###AI writing assistant
+
+Never stare at a blank page again. Get high-performing post ideas written i=
+n seconds
+
+[ GET 30% OFF](https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2nfwFS2K=
+fhELrmLUv9LO3Jgq/kDg8y11qF1M7)
+
+
+###Post Scheduler
+
+Stay consistent without the daily grind. Schedule weeks of content in one s=
+itting
+
+[ GET 30% OFF](https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2nfy8RYp=
+yfnaJohojJhsq3dM/qXblCjvD8Y-H)
+
+
+###Influencer Feeds
+
+Find viral-worthy content ideas instantly by seeing what's working for top =
+creators
+
+[ GET 30% OFF](https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng01R5L=
+HeMolr48XU4NcnZs/SqdAKSJfrcvD)
+
+
+###Auto Comment & DM
+
+Engage with your network on autopilot. Run Lead Magnets effortlessly
+
+[ GET 30% OFF](https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng1uQbq=
+acw3DtQSLeQsPXWO/iiRFTIN6eWx7)
+
+
+###Powerful Analytics
+
+Know exactly what content drives results so you stop guessing and start gro=
+wing
+
+[ GET 30% OFF](https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng3nQ8L=
+tbVHfvmm9onNCHSu/xQACUOxfxvuB)
+
+
+###Taplio Academy
+
+Learn proven strategies from creators who've actually built audiences and l=
+anded clients
+
+[ GET 30% OFF](https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng5gPer=
+Ca4W7y95xz9rz1PQ/lDK9xSNv9wz6)
+
+
+###Get your 30% OFF Now !
+
+Start growing on LinkedIn now at a discounted price.
+
+[ Use code BF30](https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng7ZP=
+BMVYdka0VPm9WMllLw/ieOyHNLEkWpZ "book a spot")
+
+
+###Wanna share the Taplio love ?=20
+Join our Affiliate program and get paid for sharing your love of Taplio.
+
+[ Become an affiliate](https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA=
+2nfsTSzK3k5sxhcrIocOTpno/Ge3hY8PTelQmaffiliates "become an affiliate")
+
+
+**lempire - Taplio**
+
+
+128 rue de la Bo=C3=A9tie, 75008, Paris
+
+
+This email was sent to=C2=A0glenwil2005@gmail.com.
+
+You've received this email because you've subscribed to our newsletter.
+
+
+[Update your preference]()=C2=A0|=C2=A0[Unsubscribe](https://7v7ct.r.ag.d.s=
+endibm3.com/mk/un/v2/sh/7nVTPdbLJ2bPbZZrkwU4r8YuEPfbMGq/jc_Him2zFC39)
+
+
+---------?=_21924-9041497254429
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"><head><meta=
+ http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><meta h=
+ttp-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><meta name=3D"format-de=
+tection" content=3D"telephone=3Dno"><meta name=3D"viewport" content=3D"widt=
+h=3Ddevice-width, initial-scale=3D1.0"><title>30% OFF all Taplio Plans =E2=
+=80=A2 16h Left</title><style type=3D"text/css" emogrify=3D"no">#outlook a =
+{ padding:0; } .ExternalClass { width:100%; } .ExternalClass, .ExternalClas=
+s p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .External=
+Class div { line-height: 100%; } table td { border-collapse: collapse; mso-=
+line-height-rule: exactly; } .editable.image { font-size: 0 !important; lin=
+e-height: 0 !important; } .nl2go_preheader { display: none !important; mso-=
+hide:all !important; mso-line-height-rule: exactly; visibility: hidden !imp=
+ortant; line-height: 0px !important; font-size: 0px !important; } body { wi=
+dth:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:10=
+0%; margin:0; padding:0; } img { outline:none; text-decoration:none; -ms-in=
+terpolation-mode: bicubic; } a img { border:none; } table { border-collapse=
+:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; } th { font-weight: =
+normal; text-align: left; } *[class=3D"gmail-fix"] { display: none !importa=
+nt; } </style><style type=3D"text/css" emogrify=3D"no"> @media (max-width: =
+600px) { .gmx-killpill { content: ' \03D1';} } </style><style type=3D"text/=
+css" emogrify=3D"no">@media (max-width: 600px) { .gmx-killpill { content: '=
+ \03D1';} .r0-o { border-style: solid !important; margin: 0 auto 0 auto !im=
+portant; width: 320px !important } .r1-i { background-color: #e6ecf9 !impor=
+tant } .r2-c { box-sizing: border-box !important; text-align: center !impor=
+tant; valign: top !important; width: 100% !important } .r3-o { background-s=
+ize: auto !important; border-style: solid !important; margin: 0 auto 0 auto=
+ !important; width: 100% !important } .r4-i { background-color: #ffffff !im=
+portant; padding-bottom: 12px !important; padding-left: 12px !important; pa=
+dding-right: 12px !important; padding-top: 12px !important } .r5-c { box-si=
+zing: border-box !important; valign: top !important; width: 75% !important =
+} .r6-o { border-style: solid !important; width: 100% !important } .r7-o { =
+border-style: solid !important; margin: 0 auto 0 0 !important; width: 120px=
+ !important } .r8-i { padding-top: 5px !important } .r9-c { box-sizing: bor=
+der-box !important; valign: top !important; width: 25% !important } .r10-i =
+{ background-color: #ffffff !important; padding-bottom: 0px !important; pad=
+ding-left: 12px !important; padding-right: 12px !important; padding-top: 16=
+px !important } .r11-c { box-sizing: border-box !important; display: block =
+!important; valign: top !important; width: 100% !important } .r12-i { paddi=
+ng-bottom: 0px !important; padding-left: 0px !important; padding-right: 0px=
+ !important; padding-top: 0px !important } .r13-c { box-sizing: border-box =
+!important; text-align: left !important; valign: top !important; width: 100=
+% !important } .r14-o { border-bottom-width: 0px !important; border-left-wi=
+dth: 0px !important; border-right-width: 0px !important; border-style: soli=
+d !important; border-top-width: 0px !important; margin: 0 auto 0 0 !importa=
+nt; margin-bottom: 8px !important; margin-top: 20px !important; width: 100%=
+ !important } .r15-i { padding-top: 0px !important; text-align: left !impor=
+tant } .r16-o { border-style: solid !important; margin: 0 auto 0 auto !impo=
+rtant; margin-bottom: 30px !important; width: 100% !important } .r17-i { pa=
+dding-bottom: 0px !important; padding-left: 0px !important; padding-right: =
+0px !important; padding-top: 0px !important; text-align: center !important =
+} .r18-o { border-style: solid !important; margin: 0 auto 0 auto !important=
+; margin-bottom: 0px !important; margin-top: 0px !important; width: 100% !i=
+mportant } .r19-i { text-align: center !important } .r20-r { background-col=
+or: #2c58b6 !important; border-color: #666666 !important; border-radius: 10=
+px !important; border-width: 0px !important; box-sizing: border-box; height=
+: initial !important; padding-bottom: 12px !important; padding-left: 0px !i=
+mportant; padding-right: 0px !important; padding-top: 12px !important; text=
+-align: center !important; width: 100% !important } .r21-o { border-style: =
+solid !important; margin: 0 auto 0 auto !important; width: 100% !important =
+} .r22-i { background-color: #ffffff !important; padding-bottom: 0px !impor=
+tant; padding-left: 15px !important; padding-right: 15px !important; paddin=
+g-top: 20px !important } .r23-o { background-size: auto !important; border-=
+bottom-width: 0px !important; border-left-width: 0px !important; border-rig=
+ht-width: 0px !important; border-style: solid !important; border-top-width:=
+ 0px !important; margin: 0 auto 0 auto !important; width: 100% !important }=
+ .r24-i { color: #3b3f44 !important; padding-bottom: 20px !important; paddi=
+ng-left: 0px !important; padding-right: 0px !important; padding-top: 20px !=
+important } .r25-o { background-size: cover !important; border-style: solid=
+ !important; margin: 0 auto 0 auto !important; width: 100% !important } .r2=
+6-i { background-color: #ffffff !important; padding-bottom: 20px !important=
+; padding-left: 15px !important; padding-right: 15px !important; padding-to=
+p: 20px !important } .r27-i { padding-bottom: 20px !important; padding-left=
+: 0px !important; padding-right: 0px !important } .r28-c { box-sizing: bord=
+er-box !important; padding-bottom: 0px !important; padding-left: 0px !impor=
+tant; padding-right: 0px !important; padding-top: 0px !important; text-alig=
+n: center !important; valign: top !important; width: 100% !important } .r29=
+-o { border-style: solid !important; margin: 0 auto 0 0 !important; margin-=
+bottom: 15px !important; margin-top: 15px !important; width: 100% !importan=
+t } .r30-o { border-style: solid !important; margin: 0 auto 0 0 !important;=
+ margin-bottom: 15px !important; width: 100% !important } .r31-i { padding-=
+bottom: 0px !important; padding-left: 0px !important; padding-right: 0px !i=
+mportant; padding-top: 0px !important; text-align: left !important } .r32-i=
+ { padding-left: 0px !important; padding-right: 0px !important } .r33-o { b=
+order-style: solid !important; margin: 0 auto 0 0 !important; margin-bottom=
+: 0px !important; margin-top: 0px !important; width: 100% !important } .r34=
+-r { background-color: #2c58b6 !important; border-color: #666666 !important=
+; border-radius: 8px !important; border-width: 0px !important; box-sizing: =
+border-box; height: initial !important; padding-bottom: 12px !important; pa=
+dding-left: 0px !important; padding-right: 0px !important; padding-top: 12p=
+x !important; text-align: center !important; width: 100% !important } .r35-=
+i { background-color: #ffffff !important; padding-bottom: 0px !important; p=
+adding-left: 15px !important; padding-right: 15px !important; padding-top: =
+0px !important } .r36-i { color: #3b3f44 !important; padding-bottom: 20px !=
+important; padding-left: 32px !important; padding-right: 32px !important; p=
+adding-top: 20px !important } .r37-i { background-color: #ffffff !important=
+; padding-bottom: 24px !important; padding-left: 15px !important; padding-r=
+ight: 15px !important; padding-top: 0px !important } .r38-i { background-co=
+lor: #171616 !important; padding-bottom: 0px !important; padding-left: 0px =
+!important; padding-right: 0px !important; padding-top: 12px !important } .=
+r39-o { border-style: solid !important; margin-bottom: 0px !important; marg=
+in-top: 0px !important; width: 100% !important } .r40-i { background-color:=
+ #171616 !important; padding-bottom: 24px !important; padding-left: 24px !i=
+mportant; padding-right: 24px !important; padding-top: 24px !important } .r=
+41-r { background-color: #ec6181 !important; border-color: #666666 !importa=
+nt; border-radius: 10px !important; border-width: 0px !important; box-sizin=
+g: border-box; height: initial !important; padding-bottom: 12px !important;=
+ padding-left: 0px !important; padding-right: 0px !important; padding-top: =
+12px !important; text-align: center !important; width: 100% !important } .r=
+42-i { background-color: #2c58b6 !important; color: #566f8f !important; pad=
+ding-bottom: 20px !important; padding-left: 15px !important; padding-right:=
+ 15px !important; padding-top: 20px !important } .r43-i { background-color:=
+ #2c58b6 !important; color: #566f8f !important; padding-bottom: 0px !import=
+ant; padding-left: 0px !important; padding-right: 0px !important; padding-t=
+op: 0px !important } .r44-i { color: #566f8f !important; padding-bottom: 0p=
+x !important; padding-left: 0px !important; padding-right: 0px !important; =
+padding-top: 12px !important } .r45-i { background-color: #2c58b6 !importan=
+t; color: #566f8f !important; padding-bottom: 24px !important; padding-left=
+: 0px !important; padding-right: 0px !important; padding-top: 24px !importa=
+nt } .r46-c { box-sizing: border-box !important; color: #566f8f !important;=
+ padding-bottom: 8px !important; padding-right: 0px !important; padding-top=
+: 0px !important; text-align: center !important; valign: top !important; wi=
+dth: 100% !important } .r47-o { border-style: solid !important; margin: 0 a=
+uto 0 0 !important; margin-bottom: 16px !important; margin-top: 0px !import=
+ant; width: 100% !important } .r48-i { color: #566f8f !important; padding-b=
+ottom: 0px !important; padding-left: 0px !important; padding-right: 0px !im=
+portant; padding-top: 0px !important; text-align: center !important } .r49-=
+r { background-color: #ffffff !important; border-color: #2c58b6 !important;=
+ border-radius: 10px !important; border-width: 0px !important; box-sizing: =
+border-box; height: initial !important; padding-bottom: 12px !important; pa=
+dding-top: 12px !important; text-align: center !important; width: 100% !imp=
+ortant } .r50-i { background-color: #2c58b6 !important; color: #566f8f !imp=
+ortant; padding-bottom: 0px !important; padding-left: 15px !important; padd=
+ing-right: 15px !important; padding-top: 0px !important } .r51-i { color: #=
+566f8f !important; padding-bottom: 0px !important; padding-left: 15px !impo=
+rtant; padding-right: 15px !important; padding-top: 0px !important } .r52-o=
+ { background-size: auto !important; border-style: solid !important; margin=
+: 0 auto 0 auto !important; width: 50% !important } .r53-i { color: #566f8f=
+ !important; padding-bottom: 0px !important; padding-left: 0px !important; =
+padding-right: 0px !important; padding-top: 0px !important } .r54-c { box-s=
+izing: border-box !important; color: #566f8f !important; padding-bottom: 10=
+px !important; padding-left: 0px !important; padding-right: 0px !important;=
+ padding-top: 0px !important; text-align: center !important; valign: top !i=
+mportant; width: 100% !important } .r55-c { box-sizing: border-box !importa=
+nt; color: #566f8f !important; padding-bottom: 0px !important; padding-left=
+: 0px !important; padding-right: 0px !important; padding-top: 10px !importa=
+nt; text-align: center !important; valign: top !important; width: 100% !imp=
+ortant } body { -webkit-text-size-adjust: none } .nl2go-responsive-hide { d=
+isplay: none } .nl2go-body-table { min-width: unset !important } .mobshow {=
+ height: auto !important; overflow: visible !important; max-height: unset !=
+important; visibility: visible !important } .resp-table { display: inline-t=
+able !important } .magic-resp { display: table-cell !important } } </style>=
+<!--[if !mso]><!--><style type=3D"text/css" emogrify=3D"no">@import url("ht=
+tps://fonts.googleapis.com/css2?family=3DPoppins&family=3DInter"); </style>=
+<!--<![endif]--><style type=3D"text/css">p, h1, h2, h3, h4, ol, ul, li { ma=
+rgin: 0; } .nl2go-default-textstyle { color: #566f8f; font-family: Arial; f=
+ont-size: 16px; line-height: 1.5; word-break: break-word } .default-button =
+{ color: #ffffff; font-family: Arial; font-size: 16px; font-style: normal; =
+font-weight: bold; line-height: 1.15; text-decoration: none; word-break: br=
+eak-word } a, a:link { color: #12244a; text-decoration: underline } .defaul=
+t-heading1 { color: #213856; font-family: Verdana; font-size: 36px; font-we=
+ight: 400; word-break: break-word } .default-heading2 { color: #213856; fon=
+t-family: Verdana; font-size: 32px; font-weight: 400; word-break: break-wor=
+d } .default-heading3 { color: #213856; font-family: Verdana; font-size: 24=
+px; font-weight: 400; word-break: break-word } .default-heading4 { color: #=
+213856; font-family: Verdana; font-size: 18px; font-weight: 400; word-break=
+: break-word } a[x-apple-data-detectors] { color: inherit !important; text-=
+decoration: inherit !important; font-size: inherit !important; font-family:=
+ inherit !important; font-weight: inherit !important; line-height: inherit =
+!important; } .no-show-for-you { border: none; display: none; float: none; =
+font-size: 0; height: 0; line-height: 0; max-height: 0; mso-hide: all; over=
+flow: hidden; table-layout: fixed; visibility: hidden; width: 0; } </style>=
+<!--[if mso]><xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInc=
+h>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml><![endif]--><style=
+ type=3D"text/css">a:link{color: #12244a; text-decoration: underline;}</sty=
+le></head><body bgcolor=3D"#e6ecf9" text=3D"#566f8f" link=3D"#12244a" yahoo=
+=3D"fix" style=3D"background-color: #e6ecf9; padding-bottom: 24px; padding-=
+top: 24px;"> <table cellpadding=3D"0" border=3D"0" cellspacing=3D"0" style=
+=3D"mso-hide:all; display:none;">
+<tr><td>16h left untill the end of only sale of the year... Use code BF30 t=
+o get 30% of all Taplio Plans&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &=
+nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; =
+&nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj;=
+ &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj=
+; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwn=
+j; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zw=
+nj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&z=
+wnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&=
+zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;=
+&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy=
+;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &sh=
+y;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &s=
+hy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &=
+shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; =
+&shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp;=
+ &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp=
+; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbs=
+p; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nb=
+sp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &n=
+bsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &=
+nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; =
+&nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj;=
+ &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj=
+; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwn=
+j; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zw=
+nj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&z=
+wnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&=
+zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;=
+&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy=
+;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &sh=
+y;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &s=
+hy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &=
+shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; =
+&shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp;=
+ &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp=
+; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbs=
+p; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nb=
+sp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &n=
+bsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &=
+nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; =
+&nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj;=
+ &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj=
+; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwn=
+j; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zw=
+nj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&z=
+wnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&=
+zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;=
+&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy=
+;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &sh=
+y;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &s=
+hy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &shy;&zwnj; &nbsp; &=
+shy;</td></tr></table> <!--[if mso]> <img width=3D"1" height=3D"1" src=3D"h=
+ttps://7v7ct.r.ag.d.sendibm3.com/mk/op/sh/7nVTPddU8lzHnqfyp0nXIEyfSqcfnt6/X=
+XiERBDlatVT" /> <![endif]-->
+	<!--[if !mso]> <!----> <img style=3D"display:none" src=3D"https://7v7ct.r.=
+ag.d.sendibm3.com/mk/op/sh/7nVTPddU8lzHnqfyp0nXIEyfSqcfnt6/XXiERBDlatVT" />=
+ <!-- <![endif]-->  <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ role=3D"presentation" class=3D"nl2go-body-table" width=3D"100%" style=3D"b=
+ackground-color: #e6ecf9; width: 100%;"><tr><td> <table cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"800" align=3D"=
+center" class=3D"r0-o" style=3D"table-layout: fixed; width: 800px;"><tr><td=
+ valign=3D"top" class=3D"r1-i" style=3D"background-color: #e6ecf9;"> <table=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" wid=
+th=3D"100%" align=3D"center" class=3D"r3-o" style=3D"table-layout: fixed; w=
+idth: 100%;"><tr><td class=3D"r4-i" style=3D"background-color: #ffffff; pad=
+ding-bottom: 24px; padding-left: 32px; padding-right: 32px; padding-top: 24=
+px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" role=3D"presentation"><tr><th width=3D"75%" valign=3D"top" class=3D"r5-c"=
+ style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0"=
+ border=3D"0" role=3D"presentation" width=3D"140" align=3D"left" class=3D"r=
+7-o" style=3D"table-layout: fixed; width: 140px;"><tr><td class=3D"r8-i"> <=
+a href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2nfsTSzK3k5sx=
+hcrIocOTpno/Ge3hY8PTelQm" target=3D"_blank" style=3D"color: #12244a; text-d=
+ecoration: underline;" sib_link_id=3D"0" templating=3D"n"> <img src=3D"http=
+s://7v7ct.img.ag.d.sendibm3.com/im/sh/ZV4Kpxmv-49S.png?u=3D2BpAyz2gMiWnccbi=
+r6ldcArYWJg08qa2nk" width=3D"140" alt=3D"taplio logo" title=3D"taplio" bord=
+er=3D"0" style=3D"display: block; width: 100%;" sib_img_id=3D"0"></a> </td>=
+ </tr></table></th> <th width=3D"25%" valign=3D"top" class=3D"r9-c" style=
+=3D"font-weight: normal;"> </th> </tr></table></td> </tr></table><table cel=
+lspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" align=3D"center" class=3D"r3-o" style=3D"table-layout: fixed; wid=
+th: 100%;"><tr><td class=3D"r10-i" style=3D"background-color: #ffffff; padd=
+ing-left: 24px; padding-right: 24px;"> <table width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"1=
+00%" valign=3D"top" class=3D"r11-c" style=3D"font-weight: normal;"> <table =
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" widt=
+h=3D"100%" class=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><=
+td valign=3D"top" class=3D"r12-i" style=3D"padding-left: 15px; padding-righ=
+t: 15px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation"><tr><td class=3D"r13-c" align=3D"left"> <table=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" wid=
+th=3D"100%" class=3D"r14-o" style=3D"table-layout: fixed; width: 100%;"><tr=
+ class=3D"nl2go-responsive-hide"><td height=3D"12" style=3D"font-size: 12px=
+; line-height: 12px;">=C2=AD</td> </tr><tr><td align=3D"left" valign=3D"top=
+" class=3D"r15-i nl2go-default-textstyle" style=3D"color: #566f8f; font-fam=
+ily: Arial; font-size: 16px; word-break: break-word; line-height: 1.2; text=
+-align: left;"> <div><h1 class=3D"default-heading1" style=3D"margin: 0; col=
+or: #213856; font-family: Verdana; font-size: 36px; font-weight: 400; word-=
+break: break-word; text-align: center;">16h left...</h1><h1 class=3D"defaul=
+t-heading1" style=3D"margin: 0; color: #213856; font-family: Verdana; font-=
+size: 36px; font-weight: 400; word-break: break-word; text-align: center;">=
+Only sale of the year</h1><h1 class=3D"default-heading1" style=3D"margin: 0=
+; color: #213856; font-family: Verdana; font-size: 36px; font-weight: 400; =
+word-break: break-word; text-align: center;">is ending soon...</h1></div> <=
+/td> </tr><tr class=3D"nl2go-responsive-hide"><td height=3D"12" style=3D"fo=
+nt-size: 12px; line-height: 12px;">=C2=AD</td> </tr></table></td> </tr><tr>=
+<td class=3D"r2-c" align=3D"center"> <table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"63%" class=3D"r16-o" sty=
+le=3D"table-layout: fixed; width: 63%;"><tr><td align=3D"center" valign=3D"=
+top" class=3D"r17-i nl2go-default-textstyle" style=3D"color: #566f8f; font-=
+family: Arial; font-size: 16px; line-height: 1.5; word-break: break-word; t=
+ext-align: center;"> <div><p style=3D"margin: 0;">Our Black Friday deal is =
+live for a limited time ! Apply coupon code BF30 at checkout to save 30% on=
+ any order</p></div> </td> </tr><tr class=3D"nl2go-responsive-hide"><td hei=
+ght=3D"30" style=3D"font-size: 30px; line-height: 30px;">=C2=AD</td> </tr><=
+/table></td> </tr><tr><td class=3D"r2-c" align=3D"center"> <table cellspaci=
+ng=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"160"=
+ class=3D"r18-o" style=3D"table-layout: fixed; width: 160px;"><tr><td heigh=
+t=3D"18" align=3D"center" valign=3D"top" class=3D"r19-i nl2go-default-texts=
+tyle" style=3D"color: #566f8f; font-family: Arial; font-size: 16px; line-he=
+ight: 1.5; word-break: break-word;">  <!--[if mso]> <v:roundrect xmlns:v=3D=
+"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office=
+:word" href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2nfuMSVp=
+Mif7PjzB6yytGZkK/tzwzBCLqm5q0" style=3D"v-text-anchor:middle; height: 41px;=
+ width: 159px;" arcsize=3D"24%" fillcolor=3D"#2c58b6" strokecolor=3D"#2c58b=
+6" strokeweight=3D"1px" data-btn=3D"1" sib_link_id=3D"1" templating=3D"n"> =
+<w:anchorlock> </w:anchorlock> <v:textbox inset=3D"0,0,0,0"> <div style=3D"=
+display:none;"> <center class=3D"default-button"><span>Get Deal</span></cen=
+ter> </div> </v:textbox> </v:roundrect> <![endif]-->  <!--[if !mso]><!-- --=
+> <a href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2nfuMSVpMi=
+f7PjzB6yytGZkK/tzwzBCLqm5q0" class=3D"r20-r default-button" target=3D"_blan=
+k" title=3D"try outreach feature" data-btn=3D"1" style=3D"font-style: norma=
+l; font-weight: bold; line-height: 1.15; text-decoration: none; word-break:=
+ break-word; border-style: solid; word-wrap: break-word; display: block; -w=
+ebkit-text-size-adjust: none; background-color: #2c58b6; border-color: #666=
+666; border-radius: 10px; border-width: 0px; color: #ffffff; font-family: A=
+rial; font-size: 16px; height: 18px; mso-hide: all; padding-bottom: 12px; p=
+adding-left: 0px; padding-right: 0px; padding-top: 12px; width: 160px;" sib=
+_link_id=3D"1" templating=3D"n"> <span>Get Deal</span></a> <!--<![endif]-->=
+ </td> </tr></table></td> </tr></table></td> </tr></table></th> </tr></tabl=
+e></td> </tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" role=3D"presentation" width=3D"100%" align=3D"center" class=3D"r21-o" sty=
+le=3D"table-layout: fixed; width: 100%;"><tr><td class=3D"r22-i" style=3D"b=
+ackground-color: #ffffff; padding-left: 32px; padding-right: 32px; padding-=
+top: 20px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" role=3D"presentation"><tr><th width=3D"100%" valign=3D"top" class=
+=3D"r11-c" style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" role=3D"presentation" width=3D"736" align=3D"center=
+" class=3D"r23-o" style=3D"border-bottom-width: 0px; border-collapse: separ=
+ate; border-left-width: 0px; border-radius: 12px; border-right-width: 0px; =
+border-top-width: 0px; table-layout: fixed; width: 736px;"><tr><td class=3D=
+"r12-i" style=3D"border-radius: 12px; font-size: 0px; line-height: 0px;"> <=
+a href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2nfwFS2KfhELr=
+mLUv9LO3Jgq/kDg8y11qF1M7" target=3D"_blank" style=3D"color: #12244a; text-d=
+ecoration: underline;" sib_link_id=3D"2" templating=3D"n"> <img src=3D"http=
+s://7v7ct.img.ag.d.sendibm3.com/im/sh/KoKNWtGftiWi.jpg?u=3D2BpAyz2gMiWnceUi=
+Nc4cBPJasdUAVLMmkG" width=3D"736" border=3D"0" style=3D"display: block; wid=
+th: 100%; border-radius: 12px;" sib_img_id=3D"1"></a> </td> </tr></table><t=
+able cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"=
+ width=3D"736" align=3D"center" class=3D"r21-o" style=3D"table-layout: fixe=
+d;"><tr><td class=3D"r24-i" style=3D"color: #3b3f44; padding-bottom: 20px; =
+padding-top: 20px; height: 2px;"> <table width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td><table width=3D=
+"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentatio=
+n" class=3D"r24-i" height=3D"2" style=3D"border-top-style: solid; backgroun=
+d-clip: border-box; border-top-color: #e6ecf9; border-top-width: 2px; font-=
+size: 2px; line-height: 2px;"><tr><td height=3D"0" style=3D"font-size: 0px;=
+ line-height: 0px;">=C2=AD</td> </tr></table></td> </tr></table></td> </tr>=
+</table></th> </tr></table></td> </tr></table><table cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"ce=
+nter" class=3D"r25-o" style=3D"table-layout: fixed; width: 100%;"><tr><td c=
+lass=3D"r26-i" style=3D"background-color: #ffffff; padding-bottom: 20px; pa=
+dding-left: 24px; padding-right: 24px; padding-top: 20px;"> <table width=3D=
+"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentatio=
+n"><tr><th width=3D"25%" valign=3D"top" class=3D"r11-c" style=3D"font-weigh=
+t: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r6-o" style=3D"table-layout: fixe=
+d; width: 100%;"><tr><td valign=3D"top" class=3D"r27-i" style=3D"padding-le=
+ft: 7px; padding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r28-c" al=
+ign=3D"center" style=3D"border-radius: 8px; font-size: 0px; line-height: 0p=
+x; valign: top;"> <img src=3D"https://7v7ct.img.ag.d.sendibm3.com/im/sh/mdf=
+vy_2N4RTj.png?u=3D2BpAyz2gMiWncgNhu7NakdldExIKrq9Wgm" width=3D"174" border=
+=3D"0" style=3D"display: block; width: 100%; border-radius: 8px;" sib_img_i=
+d=3D"2"></td> </tr></table></td> </tr></table></th> <th width=3D"58.33%" va=
+lign=3D"top" class=3D"r11-c" style=3D"font-weight: normal;"> <table cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"10=
+0%" class=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><td vali=
+gn=3D"top" class=3D"r27-i" style=3D"padding-left: 7px; padding-right: 7px;"=
+> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" ro=
+le=3D"presentation"><tr><td class=3D"r13-c" align=3D"left"> <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100=
+%" class=3D"r29-o" style=3D"table-layout: fixed; width: 100%;"><tr class=3D=
+"nl2go-responsive-hide"><td height=3D"15" style=3D"font-size: 15px; line-he=
+ight: 15px;">=C2=AD</td> </tr><tr><td align=3D"left" valign=3D"top" class=
+=3D"r15-i nl2go-default-textstyle" style=3D"color: #566f8f; font-family: Ar=
+ial; font-size: 16px; word-break: break-word; line-height: 1.2; text-align:=
+ left;"> <div><h3 class=3D"default-heading3" style=3D"margin: 0; color: #21=
+3856; font-family: Verdana; font-size: 24px; font-weight: 400; word-break: =
+break-word;"><span style=3D"font-family: Verdana; font-size: 24px;">AI writ=
+ing assistant</span></h3></div> </td> </tr><tr class=3D"nl2go-responsive-hi=
+de"><td height=3D"15" style=3D"font-size: 15px; line-height: 15px;">=C2=AD<=
+/td> </tr></table></td> </tr><tr><td class=3D"r13-c" align=3D"left"> <table=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" wid=
+th=3D"100%" class=3D"r30-o" style=3D"table-layout: fixed; width: 100%;"><tr=
+><td align=3D"left" valign=3D"top" class=3D"r31-i nl2go-default-textstyle" =
+style=3D"color: #566f8f; font-family: Arial; font-size: 16px; line-height: =
+1.5; word-break: break-word; text-align: left;"> <div><p style=3D"margin: 0=
+;">Never stare at a blank page again. Get high-performing post ideas writte=
+n in seconds</p></div> </td> </tr><tr class=3D"nl2go-responsive-hide"><td h=
+eight=3D"15" style=3D"font-size: 15px; line-height: 15px;">=C2=AD</td> </tr=
+></table></td> </tr></table></td> </tr></table></th> <th width=3D"16.67%" v=
+align=3D"top" class=3D"r11-c" style=3D"font-weight: normal;"> <table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"1=
+00%" class=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><td val=
+ign=3D"top" class=3D"r32-i" style=3D"padding-left: 7px; padding-right: 7px;=
+"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" r=
+ole=3D"presentation"><tr><td class=3D"r13-c" align=3D"left"> <table cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"16=
+0" class=3D"r33-o" style=3D"table-layout: fixed; width: 160px;"><tr><td hei=
+ght=3D"18" align=3D"center" valign=3D"top" class=3D"r19-i nl2go-default-tex=
+tstyle" style=3D"color: #566f8f; font-family: Arial; font-size: 16px; line-=
+height: 1.5; word-break: break-word;">  <!--[if mso]> <v:roundrect xmlns:v=
+=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:off=
+ice:word" href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2nfy8=
+RYpyfnaJohojJhsq3dM/qXblCjvD8Y-H" style=3D"v-text-anchor:middle; height: 41=
+px; width: 159px;" arcsize=3D"20%" fillcolor=3D"#2c58b6" strokecolor=3D"#2c=
+58b6" strokeweight=3D"1px" data-btn=3D"2" sib_link_id=3D"3" templating=3D"n=
+"> <w:anchorlock> </w:anchorlock> <v:textbox inset=3D"0,0,0,0"> <div style=
+=3D"display:none;"> <center class=3D"default-button"><span>GET 30% OFF</spa=
+n></center> </div> </v:textbox> </v:roundrect> <![endif]-->  <!--[if !mso]>=
+<!-- --> <a href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2nf=
+y8RYpyfnaJohojJhsq3dM/qXblCjvD8Y-H" class=3D"r34-r default-button" target=
+=3D"_blank" data-btn=3D"2" style=3D"font-style: normal; font-weight: bold; =
+line-height: 1.15; text-decoration: none; word-break: break-word; border-st=
+yle: solid; word-wrap: break-word; display: block; -webkit-text-size-adjust=
+: none; background-color: #2c58b6; border-color: #666666; border-radius: 8p=
+x; border-width: 0px; color: #ffffff; font-family: Arial; font-size: 16px; =
+height: 18px; mso-hide: all; padding-bottom: 12px; padding-left: 0px; paddi=
+ng-right: 0px; padding-top: 12px; width: 160px;" sib_link_id=3D"3" templati=
+ng=3D"n"> <span>GET 30% OFF</span></a> <!--<![endif]--> </td> </tr></table>=
+</td> </tr></table></td> </tr></table></th> </tr></table></td> </tr></table=
+><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"100%" align=3D"center" class=3D"r25-o" style=3D"table-layout: =
+fixed; width: 100%;"><tr><td class=3D"r26-i" style=3D"background-color: #ff=
+ffff; padding-bottom: 20px; padding-left: 24px; padding-right: 24px; paddin=
+g-top: 20px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" role=3D"presentation"><tr><th width=3D"25%" valign=3D"top" class=
+=3D"r11-c" style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r6-o"=
+ style=3D"table-layout: fixed; width: 100%;"><tr><td valign=3D"top" class=
+=3D"r27-i" style=3D"padding-left: 7px; padding-right: 7px;"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><td class=3D"r28-c" align=3D"center" style=3D"border-radius: 8px;=
+ font-size: 0px; line-height: 0px; valign: top;"> <img src=3D"https://7v7ct=
+.img.ag.d.sendibm3.com/im/sh/KGz6Abm0AcEP.png?u=3D2BpAyz2gMiWnciGhQcgZJsDfb=
+H6VEKwGdI" width=3D"174" border=3D"0" style=3D"display: block; width: 100%;=
+ border-radius: 8px;" sib_img_id=3D"3"></td> </tr></table></td> </tr></tabl=
+e></th> <th width=3D"58.33%" valign=3D"top" class=3D"r11-c" style=3D"font-w=
+eight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" ro=
+le=3D"presentation" width=3D"100%" class=3D"r6-o" style=3D"table-layout: fi=
+xed; width: 100%;"><tr><td valign=3D"top" class=3D"r27-i" style=3D"padding-=
+left: 7px; padding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r13-c" =
+align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r29-o" style=3D"table-layout: fi=
+xed; width: 100%;"><tr class=3D"nl2go-responsive-hide"><td height=3D"15" st=
+yle=3D"font-size: 15px; line-height: 15px;">=C2=AD</td> </tr><tr><td align=
+=3D"left" valign=3D"top" class=3D"r15-i nl2go-default-textstyle" style=3D"c=
+olor: #566f8f; font-family: Arial; font-size: 16px; word-break: break-word;=
+ line-height: 1; text-align: left;"> <div><h3 class=3D"default-heading3" st=
+yle=3D"margin: 0; color: #213856; font-family: Verdana; font-size: 24px; fo=
+nt-weight: 400; word-break: break-word;"><span style=3D"font-family: Verdan=
+a; font-size: 24px;">Post Scheduler</span></h3></div> </td> </tr><tr class=
+=3D"nl2go-responsive-hide"><td height=3D"15" style=3D"font-size: 15px; line=
+-height: 15px;">=C2=AD</td> </tr></table></td> </tr><tr><td class=3D"r13-c"=
+ align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" ro=
+le=3D"presentation" width=3D"100%" class=3D"r30-o" style=3D"table-layout: f=
+ixed; width: 100%;"><tr><td align=3D"left" valign=3D"top" class=3D"r31-i nl=
+2go-default-textstyle" style=3D"color: #566f8f; font-family: Arial; font-si=
+ze: 16px; line-height: 1.5; word-break: break-word; text-align: left;"> <di=
+v><p style=3D"margin: 0;">Stay consistent without the daily grind. Schedule=
+ weeks of content in one sitting</p></div> </td> </tr><tr class=3D"nl2go-re=
+sponsive-hide"><td height=3D"15" style=3D"font-size: 15px; line-height: 15p=
+x;">=C2=AD</td> </tr></table></td> </tr></table></td> </tr></table></th> <t=
+h width=3D"16.67%" valign=3D"top" class=3D"r11-c" style=3D"font-weight: nor=
+mal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pres=
+entation" width=3D"100%" class=3D"r6-o" style=3D"table-layout: fixed; width=
+: 100%;"><tr><td valign=3D"top" class=3D"r32-i" style=3D"padding-left: 7px;=
+ padding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r13-c" align=3D"=
+left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pres=
+entation" width=3D"160" class=3D"r33-o" style=3D"table-layout: fixed; width=
+: 160px;"><tr><td height=3D"18" align=3D"center" valign=3D"top" class=3D"r1=
+9-i nl2go-default-textstyle" style=3D"color: #566f8f; font-family: Arial; f=
+ont-size: 16px; line-height: 1.5; word-break: break-word;">  <!--[if mso]> =
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/=
+cl/f/sh/7nVU1aA2ng01R5LHeMolr48XU4NcnZs/SqdAKSJfrcvD" style=3D"v-text-ancho=
+r:middle; height: 41px; width: 159px;" arcsize=3D"20%" fillcolor=3D"#2c58b6=
+" strokecolor=3D"#2c58b6" strokeweight=3D"1px" data-btn=3D"3" sib_link_id=
+=3D"4" templating=3D"n"> <w:anchorlock> </w:anchorlock> <v:textbox inset=3D=
+"0,0,0,0"> <div style=3D"display:none;"> <center class=3D"default-button"><=
+span>GET 30% OFF</span></center> </div> </v:textbox> </v:roundrect> <![endi=
+f]-->  <!--[if !mso]><!-- --> <a href=3D"https://7v7ct.r.ag.d.sendibm3.com/=
+mk/cl/f/sh/7nVU1aA2ng01R5LHeMolr48XU4NcnZs/SqdAKSJfrcvD" class=3D"r34-r def=
+ault-button" target=3D"_blank" data-btn=3D"3" style=3D"font-style: normal; =
+font-weight: bold; line-height: 1.15; text-decoration: none; word-break: br=
+eak-word; border-style: solid; word-wrap: break-word; display: block; -webk=
+it-text-size-adjust: none; background-color: #2c58b6; border-color: #666666=
+; border-radius: 8px; border-width: 0px; color: #ffffff; font-family: Arial=
+; font-size: 16px; height: 18px; mso-hide: all; padding-bottom: 12px; paddi=
+ng-left: 0px; padding-right: 0px; padding-top: 12px; width: 160px;" sib_lin=
+k_id=3D"4" templating=3D"n"> <span>GET 30% OFF</span></a> <!--<![endif]--> =
+</td> </tr></table></td> </tr></table></td> </tr></table></th> </tr></table=
+></td> </tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ role=3D"presentation" width=3D"100%" align=3D"center" class=3D"r25-o" styl=
+e=3D"table-layout: fixed; width: 100%;"><tr><td class=3D"r26-i" style=3D"ba=
+ckground-color: #ffffff; padding-bottom: 20px; padding-left: 24px; padding-=
+right: 24px; padding-top: 20px;"> <table width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"25%" v=
+align=3D"top" class=3D"r11-c" style=3D"font-weight: normal;"> <table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"1=
+00%" class=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><td val=
+ign=3D"top" class=3D"r27-i" style=3D"padding-left: 7px; padding-right: 7px;=
+"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" r=
+ole=3D"presentation"><tr><td class=3D"r28-c" align=3D"center" style=3D"bord=
+er-radius: 8px; font-size: 0px; line-height: 0px; valign: top;"> <img src=
+=3D"https://7v7ct.img.ag.d.sendibm3.com/im/sh/Dy_-qoNDNVlx.png?u=3D2BpAyz2g=
+MiWnck9gx7zXt6fhxaufapj0Zo" width=3D"174" border=3D"0" style=3D"display: bl=
+ock; width: 100%; border-radius: 8px;" sib_img_id=3D"4"></td> </tr></table>=
+</td> </tr></table></th> <th width=3D"58.33%" valign=3D"top" class=3D"r11-c=
+" style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r6-o" style=3D=
+"table-layout: fixed; width: 100%;"><tr><td valign=3D"top" class=3D"r27-i" =
+style=3D"padding-left: 7px; padding-right: 7px;"> <table width=3D"100%" cel=
+lspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td=
+ class=3D"r13-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0"=
+ border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r29-o" style=3D=
+"table-layout: fixed; width: 100%;"><tr class=3D"nl2go-responsive-hide"><td=
+ height=3D"15" style=3D"font-size: 15px; line-height: 15px;">=C2=AD</td> </=
+tr><tr><td align=3D"left" valign=3D"top" class=3D"r15-i nl2go-default-texts=
+tyle" style=3D"color: #566f8f; font-family: Arial; font-size: 16px; word-br=
+eak: break-word; line-height: 1; text-align: left;"> <div><h3 class=3D"defa=
+ult-heading3" style=3D"margin: 0; color: #213856; font-family: Verdana; fon=
+t-size: 24px; font-weight: 400; word-break: break-word;"><span style=3D"fon=
+t-family: Verdana; font-size: 24px;">Influencer Feeds</span></h3></div> </t=
+d> </tr><tr class=3D"nl2go-responsive-hide"><td height=3D"15" style=3D"font=
+-size: 15px; line-height: 15px;">=C2=AD</td> </tr></table></td> </tr><tr><t=
+d class=3D"r13-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r30-o" style=
+=3D"table-layout: fixed; width: 100%;"><tr><td align=3D"left" valign=3D"top=
+" class=3D"r31-i nl2go-default-textstyle" style=3D"color: #566f8f; font-fam=
+ily: Arial; font-size: 16px; line-height: 1.5; word-break: break-word; text=
+-align: left;"> <div><p style=3D"margin: 0;">Find viral-worthy content idea=
+s instantly by seeing what's working for top creators</p></div> </td> </tr>=
+<tr class=3D"nl2go-responsive-hide"><td height=3D"15" style=3D"font-size: 1=
+5px; line-height: 15px;">=C2=AD</td> </tr></table></td> </tr></table></td> =
+</tr></table></th> <th width=3D"16.67%" valign=3D"top" class=3D"r11-c" styl=
+e=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" role=3D"presentation" width=3D"100%" class=3D"r6-o" style=3D"table=
+-layout: fixed; width: 100%;"><tr><td valign=3D"top" class=3D"r32-i" style=
+=3D"padding-left: 7px; padding-right: 7px;"> <table width=3D"100%" cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td clas=
+s=3D"r13-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" role=3D"presentation" width=3D"160" class=3D"r33-o" style=3D"table=
+-layout: fixed; width: 160px;"><tr><td height=3D"18" align=3D"center" valig=
+n=3D"top" class=3D"r19-i nl2go-default-textstyle" style=3D"color: #566f8f; =
+font-family: Arial; font-size: 16px; line-height: 1.5; word-break: break-wo=
+rd;">  <!--[if mso]> <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml"=
+ xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://7v7ct.r.=
+ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng1uQbqacw3DtQSLeQsPXWO/iiRFTIN6eWx7" =
+style=3D"v-text-anchor:middle; height: 41px; width: 159px;" arcsize=3D"20%"=
+ fillcolor=3D"#2c58b6" strokecolor=3D"#2c58b6" strokeweight=3D"1px" data-bt=
+n=3D"4" sib_link_id=3D"5" templating=3D"n"> <w:anchorlock> </w:anchorlock> =
+<v:textbox inset=3D"0,0,0,0"> <div style=3D"display:none;"> <center class=
+=3D"default-button"><span>GET 30% OFF</span></center> </div> </v:textbox> <=
+/v:roundrect> <![endif]-->  <!--[if !mso]><!-- --> <a href=3D"https://7v7ct=
+.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng1uQbqacw3DtQSLeQsPXWO/iiRFTIN6eWx=
+7" class=3D"r34-r default-button" target=3D"_blank" data-btn=3D"4" style=3D=
+"font-style: normal; font-weight: bold; line-height: 1.15; text-decoration:=
+ none; word-break: break-word; border-style: solid; word-wrap: break-word; =
+display: block; -webkit-text-size-adjust: none; background-color: #2c58b6; =
+border-color: #666666; border-radius: 8px; border-width: 0px; color: #fffff=
+f; font-family: Arial; font-size: 16px; height: 18px; mso-hide: all; paddin=
+g-bottom: 12px; padding-left: 0px; padding-right: 0px; padding-top: 12px; w=
+idth: 160px;" sib_link_id=3D"5" templating=3D"n"> <span>GET 30% OFF</span><=
+/a> <!--<![endif]--> </td> </tr></table></td> </tr></table></td> </tr></tab=
+le></th> </tr></table></td> </tr></table><table cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"center"=
+ class=3D"r25-o" style=3D"table-layout: fixed; width: 100%;"><tr><td class=
+=3D"r26-i" style=3D"background-color: #ffffff; padding-bottom: 20px; paddin=
+g-left: 24px; padding-right: 24px; padding-top: 20px;"> <table width=3D"100=
+%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><=
+tr><th width=3D"25%" valign=3D"top" class=3D"r11-c" style=3D"font-weight: n=
+ormal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pr=
+esentation" width=3D"100%" class=3D"r6-o" style=3D"table-layout: fixed; wid=
+th: 100%;"><tr><td valign=3D"top" class=3D"r27-i" style=3D"padding-left: 7p=
+x; padding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r28-c" align=3D=
+"center" style=3D"border-radius: 8px; font-size: 0px; line-height: 0px; val=
+ign: top;"> <img src=3D"https://7v7ct.img.ag.d.sendibm3.com/im/sh/YSdYq0Zoo=
+Eq8.png?u=3D2BpAyz2gMiWncm2gTdIWSL7kJuipxKVkWK" width=3D"174" border=3D"0" =
+style=3D"display: block; width: 100%; border-radius: 8px;" sib_img_id=3D"5"=
+></td> </tr></table></td> </tr></table></th> <th width=3D"58.33%" valign=3D=
+"top" class=3D"r11-c" style=3D"font-weight: normal;"> <table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" cla=
+ss=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><td valign=3D"t=
+op" class=3D"r27-i" style=3D"padding-left: 7px; padding-right: 7px;"> <tabl=
+e width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"p=
+resentation"><tr><td class=3D"r13-c" align=3D"left"> <table cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" clas=
+s=3D"r29-o" style=3D"table-layout: fixed; width: 100%;"><tr class=3D"nl2go-=
+responsive-hide"><td height=3D"15" style=3D"font-size: 15px; line-height: 1=
+5px;">=C2=AD</td> </tr><tr><td align=3D"left" valign=3D"top" class=3D"r15-i=
+ nl2go-default-textstyle" style=3D"color: #566f8f; font-family: Arial; font=
+-size: 16px; word-break: break-word; line-height: 1; text-align: left;"> <d=
+iv><h3 class=3D"default-heading3" id=3D"isPasted" style=3D"margin: 0; color=
+: #213856; font-family: Verdana; font-size: 24px; font-weight: 400; word-br=
+eak: break-word;">Auto Comment & DM</h3></div> </td> </tr><tr class=3D"nl2g=
+o-responsive-hide"><td height=3D"15" style=3D"font-size: 15px; line-height:=
+ 15px;">=C2=AD</td> </tr></table></td> </tr><tr><td class=3D"r13-c" align=
+=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"=
+presentation" width=3D"100%" class=3D"r30-o" style=3D"table-layout: fixed; =
+width: 100%;"><tr><td align=3D"left" valign=3D"top" class=3D"r31-i nl2go-de=
+fault-textstyle" style=3D"color: #566f8f; font-family: Arial; font-size: 16=
+px; line-height: 1.5; word-break: break-word; text-align: left;"> <div><p s=
+tyle=3D"margin: 0;">Engage with your network on autopilot. Run Lead Magnets=
+ effortlessly</p></div> </td> </tr><tr class=3D"nl2go-responsive-hide"><td =
+height=3D"15" style=3D"font-size: 15px; line-height: 15px;">=C2=AD</td> </t=
+r></table></td> </tr></table></td> </tr></table></th> <th width=3D"16.67%" =
+valign=3D"top" class=3D"r11-c" style=3D"font-weight: normal;"> <table cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"=
+100%" class=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><td va=
+lign=3D"top" class=3D"r32-i" style=3D"padding-left: 7px; padding-right: 7px=
+;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" =
+role=3D"presentation"><tr><td class=3D"r13-c" align=3D"left"> <table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"1=
+60" class=3D"r33-o" style=3D"table-layout: fixed; width: 160px;"><tr><td he=
+ight=3D"18" align=3D"center" valign=3D"top" class=3D"r19-i nl2go-default-te=
+xtstyle" style=3D"color: #566f8f; font-family: Arial; font-size: 16px; line=
+-height: 1.5; word-break: break-word;">  <!--[if mso]> <v:roundrect xmlns:v=
+=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:off=
+ice:word" href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng3n=
+Q8LtbVHfvmm9onNCHSu/xQACUOxfxvuB" style=3D"v-text-anchor:middle; height: 41=
+px; width: 159px;" arcsize=3D"20%" fillcolor=3D"#2c58b6" strokecolor=3D"#2c=
+58b6" strokeweight=3D"1px" data-btn=3D"5" sib_link_id=3D"6" templating=3D"n=
+"> <w:anchorlock> </w:anchorlock> <v:textbox inset=3D"0,0,0,0"> <div style=
+=3D"display:none;"> <center class=3D"default-button"><span>GET 30% OFF</spa=
+n></center> </div> </v:textbox> </v:roundrect> <![endif]-->  <!--[if !mso]>=
+<!-- --> <a href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng=
+3nQ8LtbVHfvmm9onNCHSu/xQACUOxfxvuB" class=3D"r34-r default-button" target=
+=3D"_blank" data-btn=3D"5" style=3D"font-style: normal; font-weight: bold; =
+line-height: 1.15; text-decoration: none; word-break: break-word; border-st=
+yle: solid; word-wrap: break-word; display: block; -webkit-text-size-adjust=
+: none; background-color: #2c58b6; border-color: #666666; border-radius: 8p=
+x; border-width: 0px; color: #ffffff; font-family: Arial; font-size: 16px; =
+height: 18px; mso-hide: all; padding-bottom: 12px; padding-left: 0px; paddi=
+ng-right: 0px; padding-top: 12px; width: 160px;" sib_link_id=3D"6" templati=
+ng=3D"n"> <span>GET 30% OFF</span></a> <!--<![endif]--> </td> </tr></table>=
+</td> </tr></table></td> </tr></table></th> </tr></table></td> </tr></table=
+><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"100%" align=3D"center" class=3D"r25-o" style=3D"table-layout: =
+fixed; width: 100%;"><tr><td class=3D"r26-i" style=3D"background-color: #ff=
+ffff; padding-bottom: 20px; padding-left: 24px; padding-right: 24px; paddin=
+g-top: 20px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" role=3D"presentation"><tr><th width=3D"25%" valign=3D"top" class=
+=3D"r11-c" style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r6-o"=
+ style=3D"table-layout: fixed; width: 100%;"><tr><td valign=3D"top" class=
+=3D"r27-i" style=3D"padding-left: 7px; padding-right: 7px;"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><td class=3D"r28-c" align=3D"center" style=3D"border-radius: 8px;=
+ font-size: 0px; line-height: 0px; valign: top;"> <img src=3D"https://7v7ct=
+.img.ag.d.sendibm3.com/im/sh/8c_mchG8U8P4.png?u=3D2BpAyz2gMiWncnvg08bV1ZZmg=
+EX0JpIUSq" width=3D"174" border=3D"0" style=3D"display: block; width: 100%;=
+ border-radius: 8px;" sib_img_id=3D"6"></td> </tr></table></td> </tr></tabl=
+e></th> <th width=3D"58.33%" valign=3D"top" class=3D"r11-c" style=3D"font-w=
+eight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" ro=
+le=3D"presentation" width=3D"100%" class=3D"r6-o" style=3D"table-layout: fi=
+xed; width: 100%;"><tr><td valign=3D"top" class=3D"r27-i" style=3D"padding-=
+left: 7px; padding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r13-c" =
+align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r29-o" style=3D"table-layout: fi=
+xed; width: 100%;"><tr class=3D"nl2go-responsive-hide"><td height=3D"15" st=
+yle=3D"font-size: 15px; line-height: 15px;">=C2=AD</td> </tr><tr><td align=
+=3D"left" valign=3D"top" class=3D"r15-i nl2go-default-textstyle" style=3D"c=
+olor: #566f8f; font-family: Arial; font-size: 16px; word-break: break-word;=
+ line-height: 1; text-align: left;"> <div><h3 class=3D"default-heading3" id=
+=3D"isPasted" style=3D"margin: 0; color: #213856; font-family: Verdana; fon=
+t-size: 24px; font-weight: 400; word-break: break-word;">Powerful Analytics=
+</h3></div> </td> </tr><tr class=3D"nl2go-responsive-hide"><td height=3D"15=
+" style=3D"font-size: 15px; line-height: 15px;">=C2=AD</td> </tr></table></=
+td> </tr><tr><td class=3D"r13-c" align=3D"left"> <table cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D=
+"r30-o" style=3D"table-layout: fixed; width: 100%;"><tr><td align=3D"left" =
+valign=3D"top" class=3D"r31-i nl2go-default-textstyle" style=3D"color: #566=
+f8f; font-family: Arial; font-size: 16px; line-height: 1.5; word-break: bre=
+ak-word; text-align: left;"> <div><p class=3D"default" id=3D"isPasted" styl=
+e=3D"margin: 0;">Know exactly what content drives results so you stop guess=
+ing and start growing</p></div> </td> </tr><tr class=3D"nl2go-responsive-hi=
+de"><td height=3D"15" style=3D"font-size: 15px; line-height: 15px;">=C2=AD<=
+/td> </tr></table></td> </tr></table></td> </tr></table></th> <th width=3D"=
+16.67%" valign=3D"top" class=3D"r11-c" style=3D"font-weight: normal;"> <tab=
+le cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" w=
+idth=3D"100%" class=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><t=
+r><td valign=3D"top" class=3D"r32-i" style=3D"padding-left: 7px; padding-ri=
+ght: 7px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" role=3D"presentation"><tr><td class=3D"r13-c" align=3D"left"> <tabl=
+e cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" wi=
+dth=3D"160" class=3D"r33-o" style=3D"table-layout: fixed; width: 160px;"><t=
+r><td height=3D"18" align=3D"center" valign=3D"top" class=3D"r19-i nl2go-de=
+fault-textstyle" style=3D"color: #566f8f; font-family: Arial; font-size: 16=
+px; line-height: 1.5; word-break: break-word;">  <!--[if mso]> <v:roundrect=
+ xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft=
+-com:office:word" href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU=
+1aA2ng5gPerCa4W7y95xz9rz1PQ/lDK9xSNv9wz6" style=3D"v-text-anchor:middle; he=
+ight: 41px; width: 159px;" arcsize=3D"20%" fillcolor=3D"#2c58b6" strokecolo=
+r=3D"#2c58b6" strokeweight=3D"1px" data-btn=3D"6" sib_link_id=3D"7" templat=
+ing=3D"n"> <w:anchorlock> </w:anchorlock> <v:textbox inset=3D"0,0,0,0"> <di=
+v style=3D"display:none;"> <center class=3D"default-button"><span>GET 30% O=
+FF</span></center> </div> </v:textbox> </v:roundrect> <![endif]-->  <!--[if=
+ !mso]><!-- --> <a href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nV=
+U1aA2ng5gPerCa4W7y95xz9rz1PQ/lDK9xSNv9wz6" class=3D"r34-r default-button" t=
+arget=3D"_blank" data-btn=3D"6" style=3D"font-style: normal; font-weight: b=
+old; line-height: 1.15; text-decoration: none; word-break: break-word; bord=
+er-style: solid; word-wrap: break-word; display: block; -webkit-text-size-a=
+djust: none; background-color: #2c58b6; border-color: #666666; border-radiu=
+s: 8px; border-width: 0px; color: #ffffff; font-family: Arial; font-size: 1=
+6px; height: 18px; mso-hide: all; padding-bottom: 12px; padding-left: 0px; =
+padding-right: 0px; padding-top: 12px; width: 160px;" sib_link_id=3D"7" tem=
+plating=3D"n"> <span>GET 30% OFF</span></a> <!--<![endif]--> </td> </tr></t=
+able></td> </tr></table></td> </tr></table></th> </tr></table></td> </tr></=
+table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"prese=
+ntation" width=3D"100%" align=3D"center" class=3D"r25-o" style=3D"table-lay=
+out: fixed; width: 100%;"><tr><td class=3D"r26-i" style=3D"background-color=
+: #ffffff; padding-bottom: 20px; padding-left: 24px; padding-right: 24px; p=
+adding-top: 20px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"=
+0" border=3D"0" role=3D"presentation"><tr><th width=3D"25%" valign=3D"top" =
+class=3D"r11-c" style=3D"font-weight: normal;"> <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"=
+r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><td valign=3D"top" cl=
+ass=3D"r27-i" style=3D"padding-left: 7px; padding-right: 7px;"> <table widt=
+h=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"present=
+ation"><tr><td class=3D"r28-c" align=3D"center" style=3D"border-radius: 8px=
+; font-size: 0px; line-height: 0px; valign: top;"> <img src=3D"https://7v7c=
+t.img.ag.d.sendibm3.com/im/sh/Phnb21tYLSq1.png?u=3D2BpAyz2gMiWncpofWduTao1p=
+2YLAgK5EPM" width=3D"174" border=3D"0" style=3D"display: block; width: 100%=
+; border-radius: 8px;" sib_img_id=3D"7"></td> </tr></table></td> </tr></tab=
+le></th> <th width=3D"58.33%" valign=3D"top" class=3D"r11-c" style=3D"font-=
+weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" r=
+ole=3D"presentation" width=3D"100%" class=3D"r6-o" style=3D"table-layout: f=
+ixed; width: 100%;"><tr><td valign=3D"top" class=3D"r27-i" style=3D"padding=
+-left: 7px; padding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r13-c"=
+ align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" ro=
+le=3D"presentation" width=3D"100%" class=3D"r29-o" style=3D"table-layout: f=
+ixed; width: 100%;"><tr class=3D"nl2go-responsive-hide"><td height=3D"15" s=
+tyle=3D"font-size: 15px; line-height: 15px;">=C2=AD</td> </tr><tr><td align=
+=3D"left" valign=3D"top" class=3D"r15-i nl2go-default-textstyle" style=3D"c=
+olor: #566f8f; font-family: Arial; font-size: 16px; word-break: break-word;=
+ line-height: 1; text-align: left;"> <div><h3 class=3D"default-heading3" id=
+=3D"isPasted" style=3D"margin: 0; color: #213856; font-family: Verdana; fon=
+t-size: 24px; font-weight: 400; word-break: break-word;">Taplio Academy</h3=
+></div> </td> </tr><tr class=3D"nl2go-responsive-hide"><td height=3D"15" st=
+yle=3D"font-size: 15px; line-height: 15px;">=C2=AD</td> </tr></table></td> =
+</tr><tr><td class=3D"r13-c" align=3D"left"> <table cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r30=
+-o" style=3D"table-layout: fixed; width: 100%;"><tr><td align=3D"left" vali=
+gn=3D"top" class=3D"r31-i nl2go-default-textstyle" style=3D"color: #566f8f;=
+ font-family: Arial; font-size: 16px; line-height: 1.5; word-break: break-w=
+ord; text-align: left;"> <div><p class=3D"default" id=3D"isPasted" style=3D=
+"margin: 0;">Learn proven strategies from creators who've actually built au=
+diences and landed clients</p></div> </td> </tr><tr class=3D"nl2go-responsi=
+ve-hide"><td height=3D"15" style=3D"font-size: 15px; line-height: 15px;">=
+=C2=AD</td> </tr></table></td> </tr></table></td> </tr></table></th> <th wi=
+dth=3D"16.67%" valign=3D"top" class=3D"r11-c" style=3D"font-weight: normal;=
+"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion" width=3D"100%" class=3D"r6-o" style=3D"table-layout: fixed; width: 10=
+0%;"><tr><td valign=3D"top" class=3D"r32-i" style=3D"padding-left: 7px; pad=
+ding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation"><tr><td class=3D"r13-c" align=3D"left"=
+> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentat=
+ion" width=3D"160" class=3D"r33-o" style=3D"table-layout: fixed; width: 160=
+px;"><tr><td height=3D"18" align=3D"center" valign=3D"top" class=3D"r19-i n=
+l2go-default-textstyle" style=3D"color: #566f8f; font-family: Arial; font-s=
+ize: 16px; line-height: 1.5; word-break: break-word;">  <!--[if mso]> <v:ro=
+undrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-mi=
+crosoft-com:office:word" href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/=
+sh/7nVU1aA2ng7ZPBMVYdka0VPm9WMllLw/ieOyHNLEkWpZ" style=3D"v-text-anchor:mid=
+dle; height: 41px; width: 159px;" arcsize=3D"20%" fillcolor=3D"#2c58b6" str=
+okecolor=3D"#2c58b6" strokeweight=3D"1px" data-btn=3D"7" sib_link_id=3D"8" =
+templating=3D"n"> <w:anchorlock> </w:anchorlock> <v:textbox inset=3D"0,0,0,=
+0"> <div style=3D"display:none;"> <center class=3D"default-button"><span>GE=
+T 30% OFF</span></center> </div> </v:textbox> </v:roundrect> <![endif]-->  =
+<!--[if !mso]><!-- --> <a href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f=
+/sh/7nVU1aA2ng7ZPBMVYdka0VPm9WMllLw/ieOyHNLEkWpZ" class=3D"r34-r default-bu=
+tton" target=3D"_blank" data-btn=3D"7" style=3D"font-style: normal; font-we=
+ight: bold; line-height: 1.15; text-decoration: none; word-break: break-wor=
+d; border-style: solid; word-wrap: break-word; display: block; -webkit-text=
+-size-adjust: none; background-color: #2c58b6; border-color: #666666; borde=
+r-radius: 8px; border-width: 0px; color: #ffffff; font-family: Arial; font-=
+size: 16px; height: 18px; mso-hide: all; padding-bottom: 12px; padding-left=
+: 0px; padding-right: 0px; padding-top: 12px; width: 160px;" sib_link_id=3D=
+"8" templating=3D"n"> <span>GET 30% OFF</span></a> <!--<![endif]--> </td> <=
+/tr></table></td> </tr></table></td> </tr></table></th> </tr></table></td> =
+</tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" align=3D"center" class=3D"r21-o" style=3D"=
+table-layout: fixed; width: 100%;"><tr><td class=3D"r35-i" style=3D"backgro=
+und-color: #ffffff;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"100%" valign=3D"=
+top" class=3D"r11-c" style=3D"font-weight: normal;"> <table cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"800" align=
+=3D"center" class=3D"r21-o" style=3D"table-layout: fixed;"><tr><td class=3D=
+"r36-i" style=3D"color: #3b3f44; padding-bottom: 20px; padding-left: 32px; =
+padding-right: 32px; padding-top: 20px; height: 2px;"> <table width=3D"100%=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><t=
+r><td><table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" role=3D"presentation" class=3D"r36-i" height=3D"2" style=3D"border-top-st=
+yle: solid; background-clip: border-box; border-top-color: #e6ecf9; border-=
+top-width: 2px; font-size: 2px; line-height: 2px;"><tr><td height=3D"0" sty=
+le=3D"font-size: 0px; line-height: 0px;">=C2=AD</td> </tr></table></td> </t=
+r></table></td> </tr></table></th> </tr></table></td> </tr></table><table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" align=3D"center" class=3D"r21-o" style=3D"table-layout: fixed; wi=
+dth: 100%;"><tr><td class=3D"r37-i" style=3D"background-color: #ffffff; pad=
+ding-bottom: 24px; padding-left: 32px; padding-right: 32px;"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><th width=3D"41.67%" valign=3D"top" class=3D"r11-c" style=3D"back=
+ground-color: #171616; font-weight: normal;"> <table cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r6=
+-o" style=3D"table-layout: fixed; width: 100%;"><tr><td valign=3D"top" clas=
+s=3D"r38-i" style=3D"background-color: #171616; padding-top: 12px;"> <table=
+ width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pr=
+esentation"><tr><td class=3D"r28-c" align=3D"center" style=3D"border-radius=
+: 0px; font-size: 0px; line-height: 0px; valign: top;"> <img src=3D"https:/=
+/7v7ct.img.ag.d.sendibm3.com/im/sh/iGnLhWpnrwFk.png?u=3D2BpAyz2gMiWncrhf39D=
+SA2TrOs9L2oryLs" width=3D"306" border=3D"0" style=3D"display: block; width:=
+ 100%; border-radius: 0px;" sib_img_id=3D"8"></td> </tr></table></td> </tr>=
+</table></th> <th width=3D"58.33%" valign=3D"top" class=3D"r11-c" style=3D"=
+background-color: #171616; font-weight: normal;"> <table cellspacing=3D"0" =
+cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=
+=3D"r39-o" style=3D"table-layout: fixed; width: 100%;"><tr><td valign=3D"to=
+p" class=3D"r40-i" style=3D"background-color: #171616; padding-bottom: 24px=
+; padding-left: 24px; padding-right: 24px; padding-top: 24px;"> <table widt=
+h=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"present=
+ation"><tr><td class=3D"r13-c" align=3D"left"> <table cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r=
+29-o" style=3D"table-layout: fixed; width: 100%;"><tr class=3D"nl2go-respon=
+sive-hide"><td height=3D"15" style=3D"font-size: 15px; line-height: 15px;">=
+=C2=AD</td> </tr><tr><td align=3D"left" valign=3D"top" class=3D"r15-i nl2go=
+-default-textstyle" style=3D"color: #566f8f; font-family: Arial; font-size:=
+ 16px; word-break: break-word; line-height: 1; text-align: left;"> <div><h3=
+ class=3D"default-heading3" style=3D"margin: 0; color: #213856; font-family=
+: Verdana; font-size: 24px; font-weight: 400; word-break: break-word;"><spa=
+n style=3D"color: rgb(255, 255, 255);">Get your 30% OFF Now !</span></h3></=
+div> </td> </tr><tr class=3D"nl2go-responsive-hide"><td height=3D"15" style=
+=3D"font-size: 15px; line-height: 15px;">=C2=AD</td> </tr></table></td> </t=
+r><tr><td class=3D"r13-c" align=3D"left"> <table cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r30-o"=
+ style=3D"table-layout: fixed; width: 100%;"><tr><td align=3D"left" valign=
+=3D"top" class=3D"r31-i nl2go-default-textstyle" style=3D"color: #566f8f; f=
+ont-family: Arial; font-size: 16px; line-height: 1.5; word-break: break-wor=
+d; text-align: left;"> <div><p style=3D"margin: 0;"><span id=3D"isPasted" s=
+tyle=3D"color: rgb(255, 255, 255);">Start growing on LinkedIn now at a disc=
+ounted price.</span></p></div> </td> </tr><tr class=3D"nl2go-responsive-hid=
+e"><td height=3D"15" style=3D"font-size: 15px; line-height: 15px;">=C2=AD</=
+td> </tr></table></td> </tr><tr><td class=3D"r13-c" align=3D"left"> <table =
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" widt=
+h=3D"160" class=3D"r33-o" style=3D"table-layout: fixed; width: 160px;"><tr>=
+<td height=3D"18" align=3D"center" valign=3D"top" class=3D"r19-i nl2go-defa=
+ult-textstyle" style=3D"color: #566f8f; font-family: Arial; font-size: 16px=
+; line-height: 1.5; word-break: break-word;">  <!--[if mso]> <v:roundrect x=
+mlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-c=
+om:office:word" href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1a=
+A2ng9SOhroXCz22rjaJsrYVIS/dOrxmeTigvV8" style=3D"v-text-anchor:middle; heig=
+ht: 41px; width: 159px;" arcsize=3D"24%" fillcolor=3D"#ec6181" strokecolor=
+=3D"#ec6181" strokeweight=3D"1px" data-btn=3D"8" sib_link_id=3D"9" templati=
+ng=3D"n"> <w:anchorlock> </w:anchorlock> <v:textbox inset=3D"0,0,0,0"> <div=
+ style=3D"display:none;"> <center class=3D"default-button"><span><span styl=
+e=3D"isolation:auto;" data-token-index=3D"0" class=3D"notion-enable-hover" =
+id=3D"isPasted">Use code BF30</span></span></center> </div> </v:textbox> </=
+v:roundrect> <![endif]-->  <!--[if !mso]><!-- --> <a href=3D"https://7v7ct.=
+r.ag.d.sendibm3.com/mk/cl/f/sh/7nVU1aA2ng9SOhroXCz22rjaJsrYVIS/dOrxmeTigvV8=
+" class=3D"r41-r default-button" target=3D"_blank" title=3D"book a spot" da=
+ta-btn=3D"8" style=3D"font-style: normal; font-weight: bold; line-height: 1=
+.15; text-decoration: none; word-break: break-word; border-style: solid; wo=
+rd-wrap: break-word; display: block; -webkit-text-size-adjust: none; backgr=
+ound-color: #ec6181; border-color: #666666; border-radius: 10px; border-wid=
+th: 0px; color: #ffffff; font-family: Arial; font-size: 16px; height: 18px;=
+ mso-hide: all; padding-bottom: 12px; padding-left: 0px; padding-right: 0px=
+; padding-top: 12px; width: 160px;" sib_link_id=3D"9" templating=3D"n"> <sp=
+an><span data-token-index=3D"0" class=3D"notion-enable-hover" id=3D"isPaste=
+d" style=3D"isolation: auto;">Use code BF30</span></span></a> <!--<![endif]=
+--> </td> </tr></table></td> </tr></table></td> </tr></table></th> </tr></t=
+able></td> </tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" class=3D"r3-o"=
+ style=3D"table-layout: fixed; width: 100%;"><tr><td class=3D"r42-i" style=
+=3D"background-color: #2c58b6; color: #566f8f; font-family: Arial; font-siz=
+e: 16px; padding-bottom: 20px; padding-left: 32px; padding-right: 32px; pad=
+ding-top: 20px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0"=
+ border=3D"0" role=3D"presentation"><tr><th width=3D"33.33%" valign=3D"top"=
+ class=3D"r11-c" style=3D"background-color: #2c58b6; font-weight: normal;">=
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"100%" class=3D"r6-o" style=3D"table-layout: fixed; width: 100%=
+;"><tr><td valign=3D"top" class=3D"r43-i" style=3D"background-color: #2c58b=
+6; color: #566f8f; font-family: Arial; font-size: 16px;"> <table width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"=
+><tr><td class=3D"r2-c" align=3D"center"> <table cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0" role=3D"presentation" width=3D"196" class=3D"r21-o" =
+style=3D"table-layout: fixed; width: 196px;"><tr><td class=3D"r44-i" style=
+=3D"color: #566f8f; font-family: Arial; font-size: 0px; line-height: 0px; p=
+adding-top: 12px;"> <img src=3D"https://7v7ct.img.ag.d.sendibm3.com/im/sh/O=
+FkgCNCqRnlp.png?u=3D2BpAyz2gMiWnctaeZeWQjGvtlBxVPJeiIO" width=3D"196" borde=
+r=3D"0" style=3D"display: block; width: 100%;" sib_img_id=3D"9"></td> </tr>=
+</table></td> </tr></table></td> </tr></table></th> <th width=3D"66.67%" va=
+lign=3D"top" class=3D"r11-c" style=3D"background-color: #2c58b6; font-weigh=
+t: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r6-o" style=3D"table-layout: fixe=
+d; width: 100%;"><tr><td valign=3D"top" class=3D"r45-i" style=3D"background=
+-color: #2c58b6; color: #566f8f; font-family: Arial; font-size: 16px; paddi=
+ng-bottom: 24px; padding-left: 32px; padding-right: 32px; padding-top: 24px=
+;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" =
+role=3D"presentation"><tr><td class=3D"r46-c nl2go-default-textstyle" align=
+=3D"left" style=3D"word-break: break-word; color: #566f8f; font-family: Ari=
+al; font-size: 16px; line-height: 1; padding-bottom: 8px; text-align: left;=
+ valign: top;"> <div><h3 class=3D"default-heading3" style=3D"margin: 0; wor=
+d-break: break-word; color: #213856; font-family: Verdana; font-size: 24px;=
+ font-weight: 400;"><span style=3D"color: #ffffff; font-family: Verdana; fo=
+nt-size: 24px;">Wanna share the Taplio love ?</span></h3></div> </td> </tr>=
+<tr><td class=3D"r13-c" align=3D"left"> <table cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r47-o" s=
+tyle=3D"table-layout: fixed; width: 100%;"><tr><td align=3D"left" valign=3D=
+"top" class=3D"r48-i nl2go-default-textstyle" style=3D"line-height: 1.5; wo=
+rd-break: break-word; color: #566f8f; font-family: Arial; font-size: 16px; =
+text-align: left;"> <div><p style=3D"margin: 0;"><span style=3D"color: #e6e=
+cf9;">Join our Affiliate program and get paid for sharing your love of Tapl=
+io.</span></p></div> </td> </tr><tr class=3D"nl2go-responsive-hide"><td hei=
+ght=3D"16" style=3D"font-size: 16px; line-height: 16px;">=C2=AD</td> </tr><=
+/table></td> </tr><tr><td class=3D"r13-c" align=3D"left"> <table cellspacin=
+g=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"187" =
+class=3D"r33-o" style=3D"table-layout: fixed; width: 187px;"><tr><td height=
+=3D"18" align=3D"center" valign=3D"top" class=3D"r19-i nl2go-default-textst=
+yle" style=3D"color: #566f8f; font-family: Arial; font-size: 16px; line-hei=
+ght: 1.5; word-break: break-word;">  <!--[if mso]> <v:roundrect xmlns:v=3D"=
+urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:=
+word" href=3D"https://7v7ct.r.ag.d.sendibm3.com/mk/cl/f/sh/WCPzyXJTZ6vLwts0=
+TEEalHe4RFVq8eDE/-w-bNf0dAo6y" style=3D"v-text-anchor:middle; height: 41px;=
+ width: 186px;" arcsize=3D"24%" fillcolor=3D"#ffffff" strokecolor=3D"#fffff=
+f" strokeweight=3D"1px" data-btn=3D"9" sib_link_id=3D"10" templating=3D"n">=
+ <w:anchorlock> </w:anchorlock> <v:textbox inset=3D"0,0,0,0"> <div style=3D=
+"display:none;"> <center class=3D"default-button"><span><span style=3D"colo=
+r:#2c58b6;">Become an affiliate</span></span></center> </div> </v:textbox> =
+</v:roundrect> <![endif]-->  <!--[if !mso]><!-- --> <a href=3D"https://7v7c=
+t.r.ag.d.sendibm3.com/mk/cl/f/sh/WCPzyXJTZ6vLwts0TEEalHe4RFVq8eDE/-w-bNf0dA=
+o6y" class=3D"r49-r default-button" target=3D"_blank" title=3D"become an af=
+filiate" data-btn=3D"9" style=3D"font-style: normal; font-weight: bold; lin=
+e-height: 1.15; text-decoration: none; word-break: break-word; border-style=
+: solid; word-wrap: break-word; display: block; -webkit-text-size-adjust: n=
+one; background-color: #ffffff; border-color: #2c58b6; border-radius: 10px;=
+ border-width: 0px; color: #ffffff; font-family: Arial; font-size: 16px; he=
+ight: 18px; mso-hide: all; padding-bottom: 12px; padding-top: 12px; width: =
+187px;" sib_link_id=3D"10" templating=3D"n"> <span><span style=3D"color: #2=
+c58b6;">Become an affiliate</span></span></a> <!--<![endif]--> </td> </tr><=
+/table></td> </tr></table></td> </tr></table></th> </tr></table></td> </tr>=
+</table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pre=
+sentation" width=3D"100%" align=3D"center" class=3D"r21-o" style=3D"table-l=
+ayout: fixed; width: 100%;"><tr><td class=3D"r50-i" style=3D"background-col=
+or: #2c58b6; color: #566f8f; font-family: Inter; font-size: 16px;"> <table =
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pre=
+sentation"><tr><th width=3D"100%" valign=3D"top" class=3D"r11-c" style=3D"f=
+ont-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" role=3D"presentation" width=3D"800" align=3D"center" class=3D"r21-o" sty=
+le=3D"table-layout: fixed;"><tr><td class=3D"r24-i" style=3D"color: #3b3f44=
+; font-family: Inter; font-size: 16px; padding-bottom: 20px; padding-left: =
+32px; padding-right: 32px; padding-top: 20px; height: 2px;"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><td><table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bor=
+der=3D"0" role=3D"presentation" class=3D"r24-i" height=3D"2" style=3D"borde=
+r-top-style: solid; background-clip: border-box; border-top-color: #e6ecf9;=
+ border-top-width: 2px; font-size: 2px; line-height: 2px;"><tr><td height=
+=3D"0" style=3D"font-size: 0px; line-height: 0px;">=C2=AD</td> </tr></table=
+></td> </tr></table></td> </tr></table></th> </tr></table></td> </tr></tabl=
+e><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentat=
+ion" width=3D"100%" align=3D"center" class=3D"r21-o" style=3D"table-layout:=
+ fixed; width: 100%;"><tr><td class=3D"r42-i" style=3D"background-color: #2=
+c58b6; color: #566f8f; font-family: Arial; font-size: 16px; padding-bottom:=
+ 20px; padding-left: 32px; padding-right: 32px; padding-top: 20px;"> <table=
+ width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pr=
+esentation"><tr><th width=3D"100%" valign=3D"top" class=3D"r11-c" style=3D"=
+font-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0" role=3D"presentation" width=3D"100%" class=3D"r6-o" style=3D"table-layo=
+ut: fixed; width: 100%;"><tr><td valign=3D"top" class=3D"r51-i" style=3D"co=
+lor: #566f8f; font-family: Arial; font-size: 16px; padding-left: 15px; padd=
+ing-right: 15px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation"><tr><td class=3D"r2-c" align=3D"left">=
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"141" class=3D"r52-o" style=3D"table-layout: fixed; width: 141p=
+x;"><tr><td class=3D"r53-i" style=3D"color: #566f8f; font-family: Arial; fo=
+nt-size: 0px; line-height: 0px;"> <img src=3D"https://7v7ct.img.ag.d.sendib=
+m3.com/im/sh/eQ4NPUMMy4bs.png?u=3D92pJLo34vnrQtTq2Px7iTYVNgdEApVrmJwi" widt=
+h=3D"141" border=3D"0" style=3D"display: block; width: 100%;" sib_img_id=3D=
+"10"></td> </tr></table></td> </tr><tr><td class=3D"r54-c nl2go-default-tex=
+tstyle" align=3D"left" style=3D"line-height: 1.5; word-break: break-word; c=
+olor: #566f8f; font-family: Arial; font-size: 16px; padding-bottom: 10px; t=
+ext-align: left; valign: top;"> <div><p style=3D"margin: 0; color: #000000;=
+ font-size: 14px;"><span style=3D"color: #ffffff;"><strong>lempire - Taplio=
+</strong></span></p></div> </td> </tr><tr><td class=3D"r54-c nl2go-default-=
+textstyle" align=3D"left" style=3D"line-height: 1.5; word-break: break-word=
+; color: #566f8f; font-family: Arial; font-size: 16px; padding-bottom: 10px=
+; text-align: left; valign: top;"> <div><p style=3D"margin: 0;"><span style=
+=3D"color: #ffffff; font-size: 14px;">128 rue de la Bo=C3=A9tie, 75008, Par=
+is</span></p></div> </td> </tr><tr><td class=3D"r55-c nl2go-default-textsty=
+le" align=3D"left" style=3D"line-height: 1.5; word-break: break-word; color=
+: #566f8f; font-family: Arial; font-size: 16px; padding-top: 10px; text-ali=
+gn: left; valign: top;"> <div><p style=3D"margin: 0;"><span style=3D"color:=
+ #ffffff; font-size: 14px;">This email was sent to=C2=A0glenwil2005@gmail.c=
+om.</span></p><p style=3D"margin: 0;"><span style=3D"color: #ffffff; font-s=
+ize: 14px;">You've received this email because you've subscribed to our new=
+sletter.</span></p></div> </td> </tr><tr><td class=3D"r55-c nl2go-default-t=
+extstyle" align=3D"left" style=3D"line-height: 1.5; word-break: break-word;=
+ color: #566f8f; font-family: Arial; font-size: 16px; padding-top: 10px; te=
+xt-align: left; valign: top;"> <div><p style=3D"margin: 0;"><span style=3D"=
+display: none;"><a href=3D"" style=3D"color: #12244a; text-decoration: unde=
+rline;"><span style=3D"color: #ffffff;">Update your preference</span></a><s=
+pan style=3D"color: #ffffff;">=C2=A0|=C2=A0</span></span><a href=3D"https:/=
+/7v7ct.r.ag.d.sendibm3.com/mk/un/v2/sh/7nVTPdbLJ2bPbZZrkwU4r8YuEPfbMGq/jc_H=
+im2zFC39" target=3D"_blank" style=3D"color: #12244a; text-decoration: under=
+line;"><span style=3D"color: #ffffff; font-size: 14px;"><u>Unsubscribe</u><=
+/span></a></p></div> </td> </tr></table></td> </tr></table></th> </tr></tab=
+le></td> </tr></table></td> </tr></table></td> </tr></table>   </body></htm=
+l>
+
+
+---------?=_21924-9041497254429--
+
