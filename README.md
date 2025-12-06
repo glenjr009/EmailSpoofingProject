@@ -63,22 +63,28 @@ Follow these steps:
 ```bash
 pip install flask
 
-4️⃣ Run the web app:
-
+4️⃣ Run the Application
 python app.py
 
 
-(or)
+or
 
 py app.py
 
-
-5️⃣ Open the browser and go to:
-
+5️⃣ Open Browser
 http://127.0.0.1:5000
 
+6️⃣ Upload .eml Files
 
-6️⃣ Upload .eml files and view results 🔍
+Results will include:
 
-“A small shield against a big threat — Email Spoofing!”
-<img width="956" height="448" alt="{3D76A33F-8D3E-4F41-8566-BBA010B90B79}" src="https://github.com/user-attachments/assets/bed293bd-87b9-454c-8464-4f0d04dd4b63" />
+Score card
+
+Reason breakdown
+
+Pie chart
+
+Bar graph
+
+CSV download
+🌟 “A small shield against a big threat — Email Spoofing!”
