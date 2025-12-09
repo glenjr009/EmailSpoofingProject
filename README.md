@@ -1,90 +1,87 @@
-# 🛡️ Email Spoofing Detection System  
-Designed & Developed by **Team Trojan Trolls** 🔥
+🛡️ V0RTEX // MAIL_GUARD
+Advanced Forensic Email Analysis & Spoofing Detection System > Developed by Team Trojan Trolls
 
-A smart bulk email analysis tool to detect spoofing and phishing attempts by examining **email headers** and **content patterns**.
+🕵️‍♂️ Overview
+V0RTEX // MAIL_GUARD is a forensic cybersecurity tool designed to analyze .eml files for indicators of spoofing, phishing, and identity deception.
 
----
+Unlike standard spam filters that rely solely on SPF/DKIM pass tags, V0RTEX employs a "Zero Trust" Structural Consistency approach. It cross-references the sender's identity against technical headers, message fingerprints, and content anomalies to detect sophisticated spoofing attempts that might bypass traditional gateways.
 
-## ⭐ Features
+🚀 Key Features
+🧠 Intelligent Analysis Engine
+Auth Integrity Check: Detects Message-ID vs. From header mismatches and verifies Return-Path alignment.
 
-✔ Upload & analyze **multiple .eml** emails at once  
-✔ Detect forged sender identity  
-✔ Rule-based scoring engine  
-✔ Header + Content + SPF/DKIM checks  
-✔ Detailed reasoning for every detection  
-✔ Intuitive dashboard UI  
-✔ Graphs & statistics for quick insights  
-✔ CSV export for reporting  
-✔ Secure offline analysis  
+Header Anomaly Detection: Flags the use of scripting tools (e.g., PHPMailer, Python Scripts) often used in attacks.
 
----
+Content Risk Assessment: Scans for urgency triggers ("Verify Now", "Suspended") and suspicious external linking patterns.
 
-## 🧠 How It Works
+💻 Cyberpunk Dashboard
+Real-time Visualization: Interactive charts powered by Chart.js breaking down threat metrics.
 
-| Module | Description |
-|--------|-------------|
-| Email Parser | Extracts headers & body using Python email library |
-| Header Analyzer | Detects forged sender fields & missing auth |
-| Content Analyzer | Keyword-based phishing detection, URL scans |
-| SPF/DKIM Check | Reads Authentication-Results indicators |
-| Report Generator | CSV export + Graphical insights |
+Forensic Logs: Detailed, line-by-line breakdown of why an email was flagged.
 
-**Scoring System:**
+Dark Mode UI: A "Hacker Terminal" aesthetic using Orbitron and JetBrains Mono fonts for maximum readability in low-light SOC environments.
 
-| Score Range | Meaning |
-|------------|---------|
-| 0–2 | Likely Legit |
-| 3–5 | Suspicious |
-| 6+ | High Spoof/Phishing Risk |
+📊 Reporting
+CSV Export: Download full forensic reports for documentation and further analysis.
 
----
 
-## 🛠️ Tech Used
+## 🛠️ Installation & Setup
 
-This project is built using:
+### Prerequisites
+* Python 3.8+
+* pip
 
-- **Python 3** → main development language  
-- **Flask** → backend web framework  
-- **Bootstrap 5** → modern front-end UI  
-- **Chart.js** → create analytics visualizations  
-- **Python Email Library** → extract & parse email content  
-- **CSV Export Tools** → download report files  
-
----
-
-## 🚀 Setup & Installation
-
-Follow these steps:
-
-1️⃣ Install **Python 3**  
-2️⃣ Open Terminal / VS Code in the project folder  
-3️⃣ Install required modules:
-
+### 1. Clone the Repository
 ```bash
-pip install flask
+git clone https://github.com/glenjr009/v0rtex-mail-guard.git
+cd v0rtex-mail-guard
 
-4️⃣ Run the Application
+```
+```bash
+pip install flask flask-session
+```
+
+### 2. Run the Application
+```Bash
+
 python app.py
+```
+### 3. Access the Dashboard
+Open your browser and navigate to: http://127.0.0.1:5000
 
+📂 Project Structure
+Bash
 
-or
+v0rtex-mail-guard/
+│
+├── app.py              # Main Flask Application (Routes & UI)
+├── detector.py         # Core Forensic Logic (The "Brain")
+├── flask_session/      # Server-side session storage (Auto-generated)
+├── requirements.txt    # Project dependencies
+└── README.md           # Documentation
+🧠 How It Works (The Logic)
+The tool calculates a total Risk Score based on three vectors:
 
-py app.py
+Auth Score (Identity): * Does the Message-ID domain match the Sender?
 
-5️⃣ Open Browser
-http://127.0.0.1:5000
+Does the Return-Path route back to the claimed sender?
 
-6️⃣ Upload .eml Files
+Header Score (Technical):
 
-Results will include:
+Are there traces of PHP scripts or automated mailing tools (X-Mailer)?
 
-Score card
+Are there conflicting Reply-To addresses?
 
-Reason breakdown
+Content Score (Behavioral):
 
-Pie chart
+Are there high-pressure keywords ("Urgent", "Password")?
 
-Bar graph
+Do links point to domains unrelated to the sender?
 
-CSV download
-🌟 “A small shield against a big threat — Email Spoofing!”
+Verdict Thresholds:
+
+🟢 Legitimate: Score = 0
+
+🟡 Suspicious: Score < 30
+
+🔴 Likely Spoof: Score ≥ 30
