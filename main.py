@@ -30,13 +30,4 @@ from detector import analyze_email
 if __name__ == "__main__":
     msg = load_email("samples/spoof1.eml")
     body = get_email_body(msg)
-
-    result = analyze_email(msg, body)
-
-    print("===== EMAIL SPOOFING DETECTION =====")
-    print("Decision:", result["label"])
-    print("Total Score:", result["score"])
-    print(f"Header Score: {result['header_score']} | Content Score: {result['content_score']}")
-    print("\nReasons:")
-    for r in result["reasons"]:
-        print(" -", r)
+    analyze_email(msg)

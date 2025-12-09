@@ -1,78 +1,106 @@
-def header_rules(msg):
-    score = 0
-    reasons = []
-
-    from_field = msg.get("From", "")
-    return_path = msg.get("Return-Path", "")
-
-    # Rule 1: From domain vs Return-Path domain mismatch
-    if from_field and return_path:
-        from_domain = from_field.split("@")[-1].strip(" >")
-        rp_domain = return_path.split("@")[-1].strip(" >")
-
-        if from_domain.lower() != rp_domain.lower():
-            score += 2
-            reasons.append("From domain and Return-Path domain mismatch")
-
-    # Rule 2: Check authentication results
-    auth = msg.get("Authentication-Results", "")
-    if auth.strip() == "":
-        score += 1
-        reasons.append("No SPF/DKIM Authentication-Results header")
-
-    return score, reasons
 import re
+import email.utils
+from urllib.parse import urlparse
 
-SUSPICIOUS_KEYWORDS = [
-    "verify your account",
-    "update your account",
-    "password expired",
-    "click the link below",
-    "confirm your identity",
-    "urgent action required",
-    "unauthorized login attempt",
-    "your account will be closed"
-]
-
-def content_rules(body):
-    score = 0
+def analyze_email(msg, body, raw_content):
+    """
+    GRAPH-READY ANALYSIS:
+    Splits penalties into Auth, Header, and Content buckets so the UI graphs work.
+    """
+    # Initialize separate buckets for the graphs
+    auth_score = 0
+    header_score = 0
+    content_score = 0
     reasons = []
-    body_lower = body.lower()
 
-    # Keyword check
-    for keyword in SUSPICIOUS_KEYWORDS:
-        if keyword in body_lower:
-            score += 2
-            reasons.append(f"Suspicious keyword found: '{keyword}'")
+    # --- 1. EXTRACT IDENTITIES ---
+    from_header = msg.get("From", "")
+    return_path = msg.get("Return-Path", "")
+    message_id = msg.get("Message-ID", "")
+    
+    def get_domain(text):
+        if not text: return ""
+        if "<" in text:
+            match = re.search(r"<([^>]+)>", text)
+            if match: text = match.group(1)
+        if "@" in text:
+            return text.split("@")[-1].lower().strip().strip(">")
+        return ""
 
-    # URL detection
-    urls = re.findall(r"https?://[^\s]+", body)
-    if len(urls) >= 3:
-        score += 1
-        reasons.append("Email contains multiple URLs")
+    dom_from = get_domain(from_header)
+    dom_return = get_domain(return_path)
+    dom_msg_id = get_domain(message_id)
 
-    # URL shortener detection
-    if any(short in body_lower for short in ["bit.ly", "tinyurl", "goo.gl"]):
-        score += 1
-        reasons.append("URL shortener detected")
+    # --- 2. AUTH / IDENTITY INTEGRITY (Populates "Auth Integrity" Graph) ---
+    # Issues here mean the sender is lying about who they are.
 
-    return score, reasons
+    # A. Message-ID Mismatch
+    if dom_from and dom_msg_id:
+        if dom_from not in dom_msg_id and dom_msg_id not in dom_from:
+            common_relays = ["amazonses.com", "google.com", "outlook.com", "protection.outlook.com"]
+            if dom_msg_id not in common_relays:
+                auth_score += 40
+                reasons.append(f"⚠️ Identity Mismatch: Sender '{dom_from}' vs Message-ID '{dom_msg_id}'")
 
-THRESHOLD = 3  # You can change based on testing
+    # B. Return-Path Mismatch
+    if dom_from and dom_return:
+        if dom_from != dom_return:
+             if not dom_return.endswith(dom_from) and not dom_from.endswith(dom_return):
+                 auth_score += 30
+                 reasons.append(f"⚠️ Return-Path Mismatch: Replies go to '{dom_return}'")
 
-def analyze_email(msg, body):
-    header_score, header_reasons = header_rules(msg)
-    content_score, content_reasons = content_rules(body)
+    # --- 3. HEADER ANOMALIES (Populates "Header Anomalies" Graph) ---
+    # Issues here mean the email was built with hacking tools or scripts.
 
-    total_score = header_score + content_score
-    reasons = header_reasons + content_reasons
+    x_mailer = msg.get("X-Mailer", "")
+    if "PHP" in x_mailer or "Python" in x_mailer or "PHPMailer" in raw_content:
+        header_score += 50
+        reasons.append(f"🚫 Scripting Tool Detected: '{x_mailer}'")
+    
+    if "X-PHP-Originating-Script" in raw_content:
+        header_score += 50
+        reasons.append("🚫 PHP Script Header Detected")
 
-    label = "LIKELY SPOOFED / PHISHING" if total_score >= THRESHOLD else "LIKELY LEGITIMATE"
+    # --- 4. CONTENT RISK (Populates "Content Risk" Graph) ---
+    
+    # Link Analysis
+    urls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', body)
+    suspicious_link_count = 0
+    for url in urls:
+        try:
+            link_domain = urlparse(url).netloc.lower()
+            if dom_from and link_domain and dom_from not in link_domain:
+                whitelist = ["facebook.com", "twitter.com", "linkedin.com", "instagram.com", "google.com"]
+                if not any(wl in link_domain for wl in whitelist):
+                    suspicious_link_count += 1
+        except: pass
+
+    if suspicious_link_count > 0:
+        content_score += 20
+        reasons.append(f"⚠️ External Links Detected: {suspicious_link_count} suspicious links")
+
+    # Keyword Analysis
+    keywords = ["urgent", "verify", "suspended", "account locked", "password"]
+    if any(k in body.lower() for k in keywords):
+        content_score += 15
+        reasons.append("⚠️ Suspicious 'Urgency' Keywords found")
+
+    # --- 5. FINAL VERDICT ---
+    total_score = auth_score + header_score + content_score
+
+    if total_score == 0:
+        label = "LEGITIMATE"
+        reasons.append("✅ Structure matches standard protocols")
+    elif total_score < 30:
+        label = "SUSPICIOUS"
+    else:
+        label = "LIKELY SPOOF"
 
     return {
         "score": total_score,
+        "auth_score": auth_score,       # Now has real values!
+        "header_score": header_score,   # Now has real values!
+        "content_score": content_score, # Now has real values!
         "label": label,
-        "reasons": reasons,
-        "header_score": header_score,
-        "content_score": content_score
+        "reasons": reasons
     }

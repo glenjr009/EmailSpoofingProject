@@ -1,0 +1,1170 @@
+Delivered-To: glenwil2005@gmail.com
+Received: by 2002:a98:a311:0:b0:255:3a22:17df with SMTP id h17csp1597160eid;
+        Sun, 7 Dec 2025 00:54:25 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHr3U1LjlysUeB8r0uXP79EPxNeqg5m8/nbD2MY/4nEGapYKoznzfh+X+HXiHIsGJm63at5
+X-Received: by 2002:a05:620a:4504:b0:8b2:f9ac:a885 with SMTP id af79cd13be357-8b6a23e1ed9mr699422985a.71.1765097665360;
+        Sun, 07 Dec 2025 00:54:25 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1765097665; cv=none;
+        d=google.com; s=arc-20240605;
+        b=BMav29rT3adX7JUw7VfRVT2D7ktV9UAxKNY3L7Q5rXR6dqc0mTOlp9THFioYKtjy49
+         DzYwncVP+JIM06lQSEy4bLlg6XFyz+1AxhjNkjALylVCx0id7agkQBzzGGkarwYoKlQj
+         o2BV206qhoy5WlueB0tYelooPr+uhPvfZkxemfdHP1OcHtG0c0KNxFJ01i2fdc1zhDo0
+         UL64W/fTpjaKrbB4wdTqRGjgk5lpXJcFUy9+PjSe3twxevMiKqB0kSoaXFmUMtJrfdhd
+         ogPfUJ1h9Hb3ov4c6cIc1jHcxw9jdgHpPb01kPgigoyjcP689iUDLjaGyeYxjmkACkuB
+         jP/A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe-post:list-unsubscribe:feedback-id:reply-to
+         :subject:message-id:mime-version:from:date:content-transfer-encoding
+         :dkim-signature:dkim-signature;
+        bh=tAfnotOm4XXpeXCnZFhwOMrIb9JJ6fOatAoqt4H9y8M=;
+        fh=pBXW2KnV+nOSTXP4VnXAXsZTo7ljWs+WkJmrDYCg2Ro=;
+        b=LQeKgmPgdOIkDtUs0eJYXamKfc1uzu7sSUMY8liu/3k6/3WYV8Kk0FDRf/WPG1UhcJ
+         BiICcO9yrtplmMVuZfuy/38Dx/32FMLI3hx4PrA+/CD/n75j2FSB4hWrhhBBJ5dKNh0F
+         L89kvBBirEMrIob0RhFet2sgp1FFfH2DjT1zsIkPh/J00uH/O/H5Lvy9Djs6EQVK+1kt
+         cuwC9/GyhkSF4g5rsq6i6ARSrzc2yfuzqdG86md3eN/gH7MYgXoPksgYP6TzL2haTxZK
+         6rlkYehCWqB63+ChPyPgzsNtkou0DeZv7eWdrdBT56EOz7HKvGPHr86PpCAmEhkoindm
+         KECw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@hackingflix.com header.s=fde header.b="0kBLe/zg";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=U+eW8wjH;
+       spf=pass (google.com: domain of bounces+32282189-6a04-glenwil2005=gmail.com@fdesp.hackingflix.com designates 192.254.118.25 as permitted sender) smtp.mailfrom="bounces+32282189-6a04-glenwil2005=gmail.com@fdesp.hackingflix.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=hackingflix.com
+Return-Path: <bounces+32282189-6a04-glenwil2005=gmail.com@fdesp.hackingflix.com>
+Received: from o7.sg.m.flodesk.com (o7.sg.m.flodesk.com. [192.254.118.25])
+        by mx.google.com with ESMTPS id af79cd13be357-8b625299bc1si864753485a.270.2025.12.07.00.54.24
+        for <glenwil2005@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 07 Dec 2025 00:54:25 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+32282189-6a04-glenwil2005=gmail.com@fdesp.hackingflix.com designates 192.254.118.25 as permitted sender) client-ip=192.254.118.25;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@hackingflix.com header.s=fde header.b="0kBLe/zg";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=U+eW8wjH;
+       spf=pass (google.com: domain of bounces+32282189-6a04-glenwil2005=gmail.com@fdesp.hackingflix.com designates 192.254.118.25 as permitted sender) smtp.mailfrom="bounces+32282189-6a04-glenwil2005=gmail.com@fdesp.hackingflix.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=hackingflix.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hackingflix.com;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	reply-to:feedback-id:list-unsubscribe:list-unsubscribe-post:to:cc:content-type:
+	date:feedback-id:from:subject:to;
+	s=fde; bh=tAfnotOm4XXpeXCnZFhwOMrIb9JJ6fOatAoqt4H9y8M=;
+	b=0kBLe/zgQFqmdV6NmYUMTO4LR4UUYu7vqzAgX09peJKHScOguVLXjzEd+2gi06jV6hLS
+	Qop2Qb7G7s19TNmCkrF0bDlrygwYmmxpNumX1oWRf/cq1/EkgcqvovMkwMMJfOjQhjqWaJ
+	ienrLtwuf68u0zrTmZfvJNIPA6JUecjVI=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	reply-to:feedback-id:list-unsubscribe:list-unsubscribe-post:to:cc:content-type:
+	date:feedback-id:from:subject:to;
+	s=smtpapi; bh=tAfnotOm4XXpeXCnZFhwOMrIb9JJ6fOatAoqt4H9y8M=;
+	b=U+eW8wjHvT7c9PJlJXraaawJdfDNjKdzDlg/WQW8IKrXjXnR2HSGoJSMVOGFSwbDX+/+
+	VeiUdVYs3EyCl56MP3WmiLZr4vPIRpTzwUJHHWjWTvllhQenuibaZXCvSeb+KwkDD9CIwt
+	WNapJhQHq6jQmEVoNLdrw5c+vWVzDV3zQ=
+Received: by recvd-549df64948-c4z8d with SMTP id recvd-549df64948-c4z8d-1-693540BF-11
+	2025-12-07 08:54:23.477437446 +0000 UTC m=+16042833.788933214
+Received: from MzIyODIxODk (unknown)
+	by geopod-ismtpd-33 (SG) with HTTP
+	id W8QGkfi8SMqltRA1zTAXkQ
+	Sun, 07 Dec 2025 08:54:23.469 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Sun, 07 Dec 2025 08:54:23 +0000 (UTC)
+From: Gautam Kumawat <support@hackingflix.com>
+Mime-Version: 1.0
+Message-ID: <W8QGkfi8SMqltRA1zTAXkQ@geopod-ismtpd-33>
+Subject: =?UTF-8?B?8J+Tng==?= 15 Missed calls for, Glen?
+Reply-To: Gautam Kumawat <support@hackingflix.com>
+Feedback-ID: fdesp-cbbez3
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fform=2Eflodesk=2Ecom=2Fpreferences=2FRzhMaVNILTVLQWxZR2s1MndX?=
+ =?us-ascii?Q?VnJOU1hmUURsSlh4N1drNmFHVTI0diZHa29KZzg?=
+ =?us-ascii?Q?3VkxhR1VEJmNWeGpWSGsyM3hXT2VXS1hiU3ZkUk?=
+ =?us-ascii?Q?s2WG5XYUxyWUwxZUtKaklGaj0zclJOY05CMmpTS?=
+ =?us-ascii?Q?DMuS2kuNnVRLmdQRTI=2Foc-unsubscribe=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E2pb2x=2FgHeOP+Sib=2FtBqbp5zQiHfGo+=2F7TF3tr3x5xtnQF3ATrmu7jdLup?=
+ =?us-ascii?Q?ROWivPXebVQg=2FuGiX34Qg5eoCnnAtC5nXjw4PIC?=
+ =?us-ascii?Q?ccLC+vHynGeyF95H98BFdcgMGVUsqzJpzG7azTm?=
+ =?us-ascii?Q?WyWWFEdOd0aM6rcLFhOmzPDHyCUtKsllODJk+Zs?=
+ =?us-ascii?Q?S8phkit8XzGlI6rIC2+Wke92Z6=2FzoZBiN=2FMSyO4?=
+ =?us-ascii?Q?=2FG5azVtRPhJJWOmuyPTjjVWNvoKHIpBhMgw2MvZ?= =?us-ascii?Q?bniE?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCP2hMuZSnyB9tfr?=
+ =?us-ascii?Q?2qtGFkiMV2XfVIi8+VcQLh0tq19esUiu0hMNale?=
+ =?us-ascii?Q?lVZ1J+jx=2FEYA58F8BzklWj=2F8M=2FXhehJcknviYXz?=
+ =?us-ascii?Q?p=2FnlkTz+FA9FBKERDug9CJsUiyDn7hMZlxZjDYi?=
+ =?us-ascii?Q?+pYYeD9vc5Z8CddnhQ1qi1UYoq0rPOuA1CKueFI?=
+ =?us-ascii?Q?D8ZbPdwKv82zrJtVfiXEmsBS6RqsxUBHsjXQDoq?=
+ =?us-ascii?Q?y6sR2UWhyposhoCccTLhj0Sbm65l5p+B65OZXRu?=
+ =?us-ascii?Q?5ghBO3172jNHREhFX9mhgonZ1BnSoqvA1X=2FtPCC?=
+ =?us-ascii?Q?HWbE1KT1jWORFN03RgruFevLPY80JHTdK70dwPo?=
+ =?us-ascii?Q?aolDh4nGUDDhLJw1t3BOYy=2Fk1Gk9Cj6q4JidE9Y?=
+ =?us-ascii?Q?Fc=2FW8qpDfhE9UsamTCJHt4nMjvLwaoM2ct+hhT6?=
+ =?us-ascii?Q?8WFgfisIJ1worPcaYbMlZiA=3D=3D?=
+To: glenwil2005@gmail.com
+X-Entity-ID: u001.mI8GX9Wogk2W4qvXaQz6KQ==
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce" lang=3D"en"><head><title>=F0=9F=93=9E 15 Missed calls for, Glen?</title=
+>
+ =20
+  <!--[if !mso]><!-->
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"/>
+  <!--<![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"/>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0"/>
+<style type=3D"text/css">
+  #outlook a { padding: 0; }
+  .ReadMsgBody { width: 100%; }
+  .ExternalClass { width: 100%; }
+  .ExternalClass * { line-height:100%; }
+  body { margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-si=
+ze-adjust: 100%; }
+  table, td { border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; }
+  img { border: 0; height: auto; line-height: 100%; outline: none; text-dec=
+oration: none; -ms-interpolation-mode: bicubic; }
+  p { display: block; margin: 13px 0; }
+</style>
+<!--[if !mso]><!-->
+<style type=3D"text/css">
+  @media only screen and (max-width:480px) {
+    @-ms-viewport { width:320px; }
+    @viewport { width:320px; }
+  }
+</style>
+<!--<![endif]-->
+<!--[if mso]>
+<xml>
+  <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<!--[if lte mso 11]>
+<style type=3D"text/css">
+  .outlook-group-fix {
+    width:100% !important;
+  }
+</style>
+<![endif]-->
+
+<!--[if !mso]><!-->
+    <link href=3D"https://assets.flodesk.com/futura-pt.css" rel=3D"styleshe=
+et" type=3D"text/css"/>
+<link href=3D"https://assets.flodesk.com/misty.css" rel=3D"stylesheet" type=
+=3D"text/css"/>
+  <!--<![endif]--><style type=3D"text/css">
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
+          body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+          p,
+          .mj-page p{
+            margin: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+          }
+          .mj-page a{
+            color: #d7d7d7;
+            text-decoration: none;
+          }
+          .is-underlined a{
+            text-decoration: underline;
+            text-underline-position: under;
+            text-underline-offset: calc(2px - 0.1em);
+          }
+          .mj-page a:hover{
+            color: #d7d7d7;
+          }
+          @media only screen and (max-width: 479px) {
+            .footer-center{
+              border: none !important;
+            }
+          }
+        </style><style type=3D"text/css">
+      @media only screen and (min-width:480px) {
+        .mj-column-per-100 { width:100%!important; }
+.mj-column-per-100 { width:100%!important; }
+      }
+    </style>
+<style type=3D"text/css">
+    .mj-column-padding--top-0 {padding-top: 0px;}
+.mj-column-padding--bottom-0 {padding-bottom: 0px;}
+.mj-column-padding--left-0 {padding-left: 0px;}
+.mj-column-padding--right-0 {padding-right: 0px;}
+  </style>
+</head>
+<body style=3D"background: rgb(255, 255, 255);"><span class=3D"preheader" s=
+tyle=3D"color: transparent; display: none; height: 0; max-height: 0; max-wi=
+dth: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; wi=
+dth: 0;">Glen, pick up=E2=80=A6 =C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C</span>
+ =20
+  <div class=3D"mj-page" style=3D"background-color:#ffffff;padding:0px 0 0p=
+x 0"><div class=3D"mj-container" style=3D"max-width:600px;margin-left:auto;=
+margin-right:auto"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"600" align=3D"center" style=3D"width:600px;">
+        <tr>
+          <td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:e=
+xactly;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+#ffffff;color:#333333"><table role=3D"presentation" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"font-size:0px;width:100%;background:#ffffff;color:#33=
+3333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-align:cent=
+er;vertical-align:top;border:0px solid #e9e9e9;direction:ltr;font-size:0px;=
+padding:0px"><div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+#000616;color:#333333"><table role=3D"presentation" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"font-size:0px;width:100%;background:#000616;color:#33=
+3333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-align:cent=
+er;vertical-align:middle;direction:ltr;font-size:0px;padding:0px"><div styl=
+e=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D"fd-spacer"><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px"><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%"><tbody><tr><td height=3D"30" style=3D"vertica=
+l-align:top"><div style=3D"display:block;font-size:1px;height:30px;line-hei=
+ght:30px;white-space:nowrap">=C2=A0</div></td></tr></tbody></table></td></t=
+r></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-text-outlook"=
+>
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;overflow:hi=
+dden;background:#000616;color:#333333" class=3D"fd-text"><table role=3D"pre=
+sentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width=
+:100%;background:#000616;color:#333333" align=3D"center" border=3D"0"><tbod=
+y><tr><td style=3D"text-align:center;vertical-align:top;direction:ltr;font-=
+size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if mso | I=
+E]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0"><div style=3D"overflow:hidden"><table role=3D"prese=
+ntation" style=3D"color:inherit;vertical-align:top;table-layout:fixed;max-w=
+idth:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr><td style=
+=3D"word-wrap:break-word;font-size:0px;padding:10px 25px 10px 25px" align=
+=3D"left"><div style=3D"cursor:auto;color:#ffffff;font-family:Helvetica, sa=
+ns-serif;font-size:15px;font-weight:400;line-height:1.7999999999999998;lett=
+er-spacing:0px;text-align:left;text-transform:none"><div data-paragraph=3D"=
+true">Hey<strong> Glen</strong>,</div><div data-paragraph=3D"true">=C2=A0</=
+div><div data-paragraph=3D"true">I wanted to ask you a question.</div><div =
+data-paragraph=3D"true"><strong>Have you ever dreamt of changing your life =
+forever? </strong>=E2=9D=A4=EF=B8=8F</div><div data-paragraph=3D"true">=C2=
+=A0</div><div data-paragraph=3D"true">I still remember how my days used to =
+end <strong>when I was studying and hustling everyday to change my life.</s=
+trong></div><div data-paragraph=3D"true">=C2=A0</div><div data-paragraph=3D=
+"true">At that time, there was no definite source of knowledge <strong>(the=
+re was no HackingFlix back then!),</strong> my daily routine involved makin=
+g daily progress in learning.</div><div data-paragraph=3D"true">=C2=A0</div=
+><div data-paragraph=3D"true">But enough about me Glen.</div><div data-para=
+graph=3D"true">Today I just thought of<strong> talking about you.</strong><=
+/div><div data-paragraph=3D"true">=C2=A0</div><div data-paragraph=3D"true">=
+But first, before we begin, let&#39;s just remember these two things -</div=
+><div data-paragraph=3D"true">One, you only get to live <strong>only one li=
+fe</strong>. =E2=9C=85</div><div data-paragraph=3D"true">And secondly, only=
+ <strong>&#34;you&#34; can get the best out of your life</strong>, and no o=
+ne else can. =E2=9C=85</div><div data-paragraph=3D"true">=C2=A0</div><div d=
+ata-paragraph=3D"true">Why?</div><div data-paragraph=3D"true"><strong>Becau=
+se nobody else gives a fuck about it.</strong></div><div data-paragraph=3D"=
+true">Why?</div><div data-paragraph=3D"true">Because, <strong>&#34;everyone=
+ else&#34; is just a well wisher Glen.</strong></div><div data-paragraph=3D=
+"true">=C2=A0</div><div style=3D"text-align:left;" data-paragraph=3D"true">=
+<span style=3D"font-size:17px;"><i><strong>&#34;They will clap when you do =
+well.</strong></i></span></div><div style=3D"text-align:left;" data-paragra=
+ph=3D"true"><span style=3D"font-size:17px;"><i><strong>And they will get di=
+sappointed when you fail.&#34;</strong></i></span></div><div style=3D"text-=
+align:left;" data-paragraph=3D"true">=C2=A0</div><div data-paragraph=3D"tru=
+e">And that&#39;s it.</div><div data-paragraph=3D"true">=C2=A0</div><div da=
+ta-paragraph=3D"true"><strong>This is how far the everyone else can influen=
+ce your life.</strong></div><div data-paragraph=3D"true">But when it comes =
+to<strong> taking action and actually changing YOUR LIFE for good?</strong>=
+</div><div data-paragraph=3D"true"><strong>Only you can do that! </strong>=
+=E2=9C=85</div></div></td></tr></tbody></table></div></div></div><!--[if ms=
+o | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-image-outlook=
+">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+#000616;color:#333333" class=3D"fd-image"><table role=3D"presentation" cell=
+padding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;backgroun=
+d:#000616;color:#333333" align=3D"center" border=3D"0"><tbody><tr><td style=
+=3D"text-align:center;vertical-align:top;direction:ltr;font-size:0px;paddin=
+g:0px 0px 0px 0px"><div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=
+=3D"display:inline-block;font-size:0px;line-height:0px;width:100%"><!--[if =
+mso | IE]>
+      <table  role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0">
+        <tr>
+          <td style=3D"vertical-align:top;width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0" data-padding-left=3D"0" data-padding-right=3D"0"><d=
+iv style=3D"overflow:hidden"><table role=3D"presentation" style=3D"color:in=
+herit;vertical-align:top;table-layout:fixed;max-width:100%;width:100%" cell=
+padding=3D"0" border=3D"0"><tbody><tr><td style=3D"word-wrap:break-word;fon=
+t-size:0px;padding:0px 0px 0px 0px"><div><table role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"table-layout:fixed;wid=
+th:100%"><tbody><tr class=3D""><td style=3D"word-wrap:break-word;font-size:=
+0px;padding:0px" align=3D"center"><div style=3D"display:inline-block;max-wi=
+dth:100%;width:400px;min-width:0"><table role=3D"presentation" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"table-layout:fixed;width:100%;border-coll=
+apse:collapse;border-spacing:0px" align=3D"center" border=3D"0"><tbody><tr>=
+<td style=3D"border:none;text-align:center" align=3D"center"><span><img alt=
+=3D"Image item" width=3D"400" height=3D"auto" src=3D"https://usercontent.fl=
+odesk.com/ff79a0ed-ad4a-4104-af8c-ffc1d03e460a/upload/33c75214-d257-4231-9b=
+74-58bcbbcf763b.gif" style=3D"border:none;border-radius:0px;display:block;f=
+ont-size:13px;outline:none;text-decoration:none;width:100%;max-width:100%;h=
+eight:auto"/></span></td></tr></tbody></table></div></td></tr></tbody></tab=
+le></div></td></tr></tbody></table></div></div></div><!--[if mso | IE]>
+            </td>
+          </tr>
+        </table>
+      <![endif]--></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-text-outlook"=
+>
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;overflow:hi=
+dden;background:#000616;color:#333333" class=3D"fd-text"><table role=3D"pre=
+sentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width=
+:100%;background:#000616;color:#333333" align=3D"center" border=3D"0"><tbod=
+y><tr><td style=3D"text-align:center;vertical-align:top;direction:ltr;font-=
+size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if mso | I=
+E]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0"><div style=3D"overflow:hidden"><table role=3D"prese=
+ntation" style=3D"color:inherit;vertical-align:top;table-layout:fixed;max-w=
+idth:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr><td style=
+=3D"word-wrap:break-word;font-size:0px;padding:10px 25px 10px 25px" align=
+=3D"left"><div style=3D"cursor:auto;color:#333333;font-family:Helvetica, sa=
+ns-serif;font-size:15px;font-weight:400;line-height:1.8;letter-spacing:0px;=
+text-align:left;text-transform:none"><div data-paragraph=3D"true">=C2=A0</d=
+iv><div data-paragraph=3D"true"><span style=3D"color:#ffffff;"><strong>When=
+ I take workshop on </strong></span><span style=3D"color:#01ff00;"><strong>=
+How to Become Highly Paid Hacker</strong></span><span style=3D"color:#fffff=
+f;"><strong>, do you know what I see everyday?</strong></span></div><div da=
+ta-paragraph=3D"true"><span style=3D"color:#ffffff;">I see persons who are<=
+strong> trying their &#34;Best&#34; to change their situation.</strong></sp=
+an></div><div data-paragraph=3D"true"><span style=3D"color:#ffffff;">I see =
+persons<strong> working on their skills.</strong></span></div><div data-par=
+agraph=3D"true"><span style=3D"color:#ffffff;">Exactly like I did 14 years =
+back.</span></div><div data-paragraph=3D"true"><span style=3D"color:#ffffff=
+;">When I felt chasing <strong>the rat races of college exams were not wort=
+h my life.</strong></span></div><div data-paragraph=3D"true"><span style=3D=
+"color:#ffffff;">But who told me to go for <strong>up skilling?</strong></s=
+pan></div><div data-paragraph=3D"true"><span style=3D"color:#ffffff;">Who t=
+old me to <strong>start learning?</strong></span></div><div data-paragraph=
+=3D"true">=C2=A0</div><div data-paragraph=3D"true"><span style=3D"color:#ff=
+ffff;"><strong>No one!</strong></span></div><div data-paragraph=3D"true">=
+=C2=A0</div><div data-paragraph=3D"true"><span style=3D"color:#ffffff;"><st=
+rong>That&#39;s why let me remind you again Glen.</strong></span></div><div=
+ data-paragraph=3D"true"><span style=3D"color:#ffffff;"><strong>This is you=
+r life.</strong></span></div><div data-paragraph=3D"true"><span style=3D"co=
+lor:#ffffff;"><strong>And YOU are YOUR BEST FRIEND!</strong></span></div><d=
+iv data-paragraph=3D"true"><span style=3D"color:#ffffff;"><strong>Specially=
+, when it comes to changing your life and </strong></span><span style=3D"co=
+lor:#01ff00;"><strong>building your career!</strong></span></div><div data-=
+paragraph=3D"true">=C2=A0</div><div data-paragraph=3D"true"><span style=3D"=
+color:#ffffff;">But this doesn&#39;t mean that you don&#39;t need any guida=
+nce!</span></div><div data-paragraph=3D"true"><span style=3D"color:#ffffff;=
+"><strong>You need someone who has already walked the path that you are goi=
+ng to walk Glen.</strong></span></div><div data-paragraph=3D"true"><span st=
+yle=3D"color:#ffffff;"><strong>You need a coach.</strong></span></div><div =
+data-paragraph=3D"true"><span style=3D"color:#ffffff;"><strong>A coach who =
+can train you.</strong></span></div><div data-paragraph=3D"true"><span styl=
+e=3D"color:#ffffff;">A coach who can<strong> guide you the right way.</stro=
+ng></span></div><div data-paragraph=3D"true"><span style=3D"color:#ffffff;"=
+>A coach who can <strong>show you how to get things done.</strong></span></=
+div><div data-paragraph=3D"true">=C2=A0</div></div></td></tr></tbody></tabl=
+e></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-image-outlook=
+">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+#000616;color:#333333" class=3D"fd-image"><table role=3D"presentation" cell=
+padding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;backgroun=
+d:#000616;color:#333333" align=3D"center" border=3D"0"><tbody><tr><td style=
+=3D"text-align:center;vertical-align:top;direction:ltr;font-size:0px;paddin=
+g:0px 0px 0px 0px"><div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=
+=3D"display:inline-block;font-size:0px;line-height:0px;width:100%"><!--[if =
+mso | IE]>
+      <table  role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0">
+        <tr>
+          <td style=3D"vertical-align:top;width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0" data-padding-left=3D"0" data-padding-right=3D"0"><d=
+iv style=3D"overflow:hidden"><table role=3D"presentation" style=3D"color:in=
+herit;vertical-align:top;table-layout:fixed;max-width:100%;width:100%" cell=
+padding=3D"0" border=3D"0"><tbody><tr><td style=3D"word-wrap:break-word;fon=
+t-size:0px;padding:0px 0px 0px 0px"><div><table role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"table-layout:fixed;wid=
+th:100%"><tbody><tr class=3D""><td style=3D"word-wrap:break-word;font-size:=
+0px;padding:0px" align=3D"center"><div style=3D"display:inline-block;max-wi=
+dth:100%;width:400px;min-width:0"><table role=3D"presentation" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"table-layout:fixed;width:100%;border-coll=
+apse:collapse;border-spacing:0px" align=3D"center" border=3D"0"><tbody><tr>=
+<td style=3D"border:none;text-align:center" align=3D"center"><span><img alt=
+=3D"Image item" width=3D"400" height=3D"auto" src=3D"https://usercontent.fl=
+odesk.com/ff79a0ed-ad4a-4104-af8c-ffc1d03e460a/upload/e82c4ef9-3900-4b4d-85=
+b3-fcb0cc0650ba.gif" style=3D"border:none;border-radius:0px;display:block;f=
+ont-size:13px;outline:none;text-decoration:none;width:100%;max-width:100%;h=
+eight:auto"/></span></td></tr></tbody></table></div></td></tr></tbody></tab=
+le></div></td></tr></tbody></table></div></div></div><!--[if mso | IE]>
+            </td>
+          </tr>
+        </table>
+      <![endif]--></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-text-outlook"=
+>
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;overflow:hi=
+dden;background:#000616;color:#333333" class=3D"fd-text"><table role=3D"pre=
+sentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width=
+:100%;background:#000616;color:#333333" align=3D"center" border=3D"0"><tbod=
+y><tr><td style=3D"text-align:center;vertical-align:top;direction:ltr;font-=
+size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if mso | I=
+E]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0"><div style=3D"overflow:hidden"><table role=3D"prese=
+ntation" style=3D"color:inherit;vertical-align:top;table-layout:fixed;max-w=
+idth:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr><td style=
+=3D"word-wrap:break-word;font-size:0px;padding:10px 25px 10px 25px" align=
+=3D"left"><div style=3D"cursor:auto;color:#333333;font-family:Helvetica, sa=
+ns-serif;font-size:15px;font-weight:400;line-height:1.8;letter-spacing:0px;=
+text-align:left;text-transform:none"><div data-paragraph=3D"true">=C2=A0</d=
+iv><div data-paragraph=3D"true"><span style=3D"color:#ffffff;">And this has=
+ always been <strong>the sole purpose of my workshop.</strong></span></div>=
+<div data-paragraph=3D"true"><span style=3D"color:#ffffff;"><strong>(And ye=
+s, I am still giving you the chance to attend my workshop and take the firs=
+t step to change your life.)</strong></span></div><div data-paragraph=3D"tr=
+ue">=C2=A0</div><div data-paragraph=3D"true">=C2=A0</div><div style=3D"text=
+-align:center;" data-paragraph=3D"true"><span style=3D"color:#ffffff;font-s=
+ize:20px;"><strong>I AM DOING A WORKSHOP TODAY</strong></span></div></div><=
+/td></tr></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-text-outlook"=
+>
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;overflow:hi=
+dden;background:#01ff00;color:#333333" class=3D"fd-text"><table role=3D"pre=
+sentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width=
+:100%;background:#01ff00;color:#333333" align=3D"center" border=3D"0"><tbod=
+y><tr><td style=3D"text-align:center;vertical-align:top;direction:ltr;font-=
+size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if mso | I=
+E]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0"><div style=3D"overflow:hidden"><table role=3D"prese=
+ntation" style=3D"color:inherit;vertical-align:top;table-layout:fixed;max-w=
+idth:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr><td style=
+=3D"word-wrap:break-word;font-size:0px;padding:10px 25px 10px 100px" align=
+=3D"left"><div style=3D"cursor:auto;color:#000616;font-family:Helvetica, sa=
+ns-serif;font-size:16px;font-weight:400;line-height:1.8;letter-spacing:0px;=
+text-align:left;text-transform:none"><div data-paragraph=3D"true"><strong>W=
+orkshop: How to Become Highly Paid Hacker</strong></div><div data-paragraph=
+=3D"true"><strong>Duration: 90 minutes</strong></div></div></td></tr></tbod=
+y></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+#000616;color:#333333"><table role=3D"presentation" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"font-size:0px;width:100%;background:#000616;color:#33=
+3333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-align:cent=
+er;vertical-align:middle;direction:ltr;font-size:0px;padding:0px"><div styl=
+e=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D"fd-spacer"><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px"><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%"><tbody><tr><td height=3D"20" style=3D"vertica=
+l-align:top"><div style=3D"display:block;font-size:1px;height:20px;line-hei=
+ght:20px;white-space:nowrap">=C2=A0</div></td></tr></tbody></table></td></t=
+r></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-text-outlook"=
+>
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;overflow:hi=
+dden;background:#000616;color:#333333" class=3D"fd-text"><table role=3D"pre=
+sentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width=
+:100%;background:#000616;color:#333333" align=3D"center" border=3D"0"><tbod=
+y><tr><td style=3D"text-align:center;vertical-align:top;direction:ltr;font-=
+size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if mso | I=
+E]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0"><div style=3D"overflow:hidden"><table role=3D"prese=
+ntation" style=3D"color:inherit;vertical-align:top;table-layout:fixed;max-w=
+idth:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr><td style=
+=3D"word-wrap:break-word;font-size:0px;padding:10px 10px 10px 10px" align=
+=3D"center"><div style=3D"cursor:auto;color:#ffffff;font-family:Helvetica, =
+sans-serif;font-size:14px;font-weight:400;line-height:1.8;letter-spacing:0p=
+x;text-align:center;text-transform:none"><div data-paragraph=3D"true"><stro=
+ng>Click on the button below to register for the workshop</strong></div></d=
+iv></td></tr></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-button-outloo=
+k">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;overflow:hi=
+dden;background:#000616;color:#333333" class=3D"fd-button"><table role=3D"p=
+resentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;wid=
+th:100%;background:#000616;color:#333333" align=3D"center" border=3D"0"><tb=
+ody><tr><td style=3D"text-align:center;vertical-align:middle;direction:ltr;=
+font-size:0px;padding:20px 0px;padding-bottom:10px;padding-left:0px;padding=
+-right:0px;padding-top:10px"><div style=3D"display:block;margin:0"><!--[if =
+mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr>=
+<td style=3D"word-wrap:break-word;font-size:0px;padding:0px" align=3D"cente=
+r"><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"border-collapse:separate" align=3D"center" border=3D"0"><tbody><tr><td =
+style=3D"border-radius:6px;color:#000616;cursor:auto;text-align:center;lett=
+er-spacing:1.8px;background:#01ff00" align=3D"center" valign=3D"middle"><a =
+role=3D"button" href=3D"https://cbbez3.ff01.fdske.com/e/c/01kbw09tyygycpfre=
+v0az2x5n1/01kbw09tyygycpfrev0bcj7nep" style=3D"text-decoration:none;display=
+:block;color:#000616;font-family:Helvetica, sans-serif;font-size:16px;font-=
+weight:700;line-height:1;text-transform:none;margin:0px;padding:20px 30px;b=
+order:2px solid #01ff00;border-radius:6px" target=3D"_blank">REGISTER NOW</=
+a></td></tr></tbody></table></td></tr></tbody></table></div></div></div><!-=
+-[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-text-outlook"=
+>
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;overflow:hi=
+dden;background:#000616;color:#333333" class=3D"fd-text"><table role=3D"pre=
+sentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width=
+:100%;background:#000616;color:#333333" align=3D"center" border=3D"0"><tbod=
+y><tr><td style=3D"text-align:center;vertical-align:top;direction:ltr;font-=
+size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if mso | I=
+E]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0"><div style=3D"overflow:hidden"><table role=3D"prese=
+ntation" style=3D"color:inherit;vertical-align:top;table-layout:fixed;max-w=
+idth:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr><td style=
+=3D"word-wrap:break-word;font-size:0px;padding:10px 25px 10px 25px" align=
+=3D"left"><div style=3D"cursor:auto;color:#ffffff;font-family:Helvetica, sa=
+ns-serif;font-size:15px;font-weight:400;line-height:1.8;letter-spacing:0px;=
+text-align:left;text-transform:none"><div data-paragraph=3D"true">=C2=A0</d=
+iv><div data-paragraph=3D"true">You can click on the REGISTER NOW button an=
+d register a slot for the workshop.</div><div data-paragraph=3D"true">=C2=
+=A0</div><div data-paragraph=3D"true">I hope <strong>from today you will st=
+art valuing yourself and start taking ownership of your own life.</strong><=
+/div><div data-paragraph=3D"true">=C2=A0</div><div data-paragraph=3D"true">=
+That&#39;s all for today, Glen.</div><div data-paragraph=3D"true">=C2=A0</d=
+iv><div data-paragraph=3D"true">=C2=A0</div><div data-paragraph=3D"true">=
+=C2=A0</div><div data-paragraph=3D"true"><strong>Wish you achieve all the s=
+uccess </strong>=E2=9D=A4=EF=B8=8F</div><div data-paragraph=3D"true">=C2=A0=
+</div><div data-paragraph=3D"true">=C2=A0</div><div data-paragraph=3D"true"=
+>=C2=A0</div><div data-paragraph=3D"true"><i><strong>To Your Success,</stro=
+ng></i></div><div data-paragraph=3D"true"><i>Gautam Kumawat</i></div><div d=
+ata-paragraph=3D"true"><i>Founder, HackingFlix</i></div><div data-paragraph=
+=3D"true">=C2=A0</div></div></td></tr></tbody></table></div></div></div><!-=
+-[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333"><table role=3D"presentation" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"font-size:0px;width:100%;background:transparent;c=
+olor:#333333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-al=
+ign:center;vertical-align:middle;direction:ltr;font-size:0px;padding:0px"><=
+div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D"fd-spacer"><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px"><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%"><tbody><tr><td height=3D"40" style=3D"vertica=
+l-align:top"><div style=3D"display:block;font-size:1px;height:40px;line-hei=
+ght:40px;white-space:nowrap">=C2=A0</div></td></tr></tbody></table></td></t=
+r></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-image-outlook=
+">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333" class=3D"fd-image"><table role=3D"presentation" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;backg=
+round:transparent;color:#333333" align=3D"center" border=3D"0"><tbody><tr><=
+td style=3D"text-align:center;vertical-align:top;direction:ltr;font-size:0p=
+x;padding:0px 0px 0px 0px"><div style=3D"display:block;margin:0"><!--[if ms=
+o | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=
+=3D"display:inline-block;font-size:0px;line-height:0px;width:100%"><!--[if =
+mso | IE]>
+      <table  role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0">
+        <tr>
+          <td style=3D"vertical-align:top;width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0" data-padding-left=3D"0" data-padding-right=3D"0"><d=
+iv style=3D"overflow:hidden"><table role=3D"presentation" style=3D"color:in=
+herit;vertical-align:top;table-layout:fixed;max-width:100%;width:100%" cell=
+padding=3D"0" border=3D"0"><tbody><tr><td style=3D"word-wrap:break-word;fon=
+t-size:0px;padding:0px 0px 0px 0px"><div><table role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"table-layout:fixed;wid=
+th:100%"><tbody><tr class=3D""><td style=3D"word-wrap:break-word;font-size:=
+0px;padding:0px" align=3D"center"><div style=3D"display:inline-block;max-wi=
+dth:100%;width:600px;min-width:0"><table role=3D"presentation" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"table-layout:fixed;width:100%;border-coll=
+apse:collapse;border-spacing:0px" align=3D"center" border=3D"0"><tbody><tr>=
+<td style=3D"border:none;text-align:center" align=3D"center"><span><img alt=
+=3D"Image item" width=3D"600" height=3D"auto" src=3D"https://usercontent.st=
+aging.flodesk.com/9145ce68-0714-4855-9ac3-488144ee1132/upload/dividerwavy_3=
+1a983e0-2d7d-40a5-8e4f-5dab2c73158e.png" style=3D"border:none;border-radius=
+:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:1=
+00%;max-width:100%;height:auto"/></span></td></tr></tbody></table></div></t=
+d></tr></tbody></table></div></td></tr></tbody></table></div></div></div><!=
+--[if mso | IE]>
+            </td>
+          </tr>
+        </table>
+      <![endif]--></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-art-outlook f=
+d-art--017-outlook">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#000000" class=3D"fd-art fd-art--017"><table role=3D"pres=
+entation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:=
+100%;background:transparent;color:#000000" align=3D"center" border=3D"0"><t=
+body><tr><td style=3D"text-align:center;vertical-align:middle;direction:ltr=
+;font-size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if m=
+so | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr>=
+<td style=3D"word-wrap:break-word;font-size:0px"><div><div style=3D"display=
+: block; text-align: center;"><img alt=3D"See you in the Workshop," src=3D"=
+https://usercontent.flodesk.com/screenshots/ff79a0ed-ad4a-4104-af8c-ffc1d03=
+e460a/6935105fdbea9299f4e1b68f/art-ca27fdc0-50fd-4fd3-9006-07626270efe4-fdf=
+674f7-b15f-4e08-a665-eba77d39e5f2.png" style=3D"border: none; border-radius=
+:0px; display:block; font-size:13px; outline:none; text-decoration:none; wi=
+dth: 100%; max-width: 600px; height:auto" width=3D"600" height=3D"auto"/></=
+div><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"table-layout:fixed;width:100%"><tbody></tbody></table></div=
+></td></tr></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-art-outlook f=
+d-art--017-outlook">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#000000" class=3D"fd-art fd-art--017"><table role=3D"pres=
+entation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:=
+100%;background:transparent;color:#000000" align=3D"center" border=3D"0"><t=
+body><tr><td style=3D"text-align:center;vertical-align:middle;direction:ltr=
+;font-size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if m=
+so | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr>=
+<td style=3D"word-wrap:break-word;font-size:0px"><div><div style=3D"display=
+: block; text-align: center;"><img alt=3D"Gautam Kumawat" src=3D"https://us=
+ercontent.flodesk.com/screenshots/ff79a0ed-ad4a-4104-af8c-ffc1d03e460a/6935=
+105fdbea9299f4e1b68f/art-f6ff163d-d85f-499a-8fd6-c123ce95d8fe-49ba9f05-e2b6=
+-4e31-bfcf-7a60b2048018.png" style=3D"border: none; border-radius:0px; disp=
+lay:block; font-size:13px; outline:none; text-decoration:none; width: 100%;=
+ max-width: 600px; height:auto" width=3D"600" height=3D"auto"/></div><table=
+ role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" sty=
+le=3D"table-layout:fixed;width:100%"><tbody></tbody></table></div></td></tr=
+></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-image-outlook=
+">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333" class=3D"fd-image"><table role=3D"presentation" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;backg=
+round:transparent;color:#333333" align=3D"center" border=3D"0"><tbody><tr><=
+td style=3D"text-align:center;vertical-align:top;direction:ltr;font-size:0p=
+x;padding:0px 0px 0px 0px"><div style=3D"display:block;margin:0"><!--[if ms=
+o | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=
+=3D"display:inline-block;font-size:0px;line-height:0px;width:100%"><!--[if =
+mso | IE]>
+      <table  role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0">
+        <tr>
+          <td style=3D"vertical-align:top;width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0" data-padding-left=3D"0" data-padding-right=3D"0"><d=
+iv style=3D"overflow:hidden"><table role=3D"presentation" style=3D"color:in=
+herit;vertical-align:top;table-layout:fixed;max-width:100%;width:100%" cell=
+padding=3D"0" border=3D"0"><tbody><tr><td style=3D"word-wrap:break-word;fon=
+t-size:0px;padding:0px 0px 0px 0px"><div><table role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"table-layout:fixed;wid=
+th:100%"><tbody><tr class=3D""><td style=3D"word-wrap:break-word;font-size:=
+0px;padding:0px" align=3D"center"><div style=3D"display:inline-block;max-wi=
+dth:100%;width:600px;min-width:0"><table role=3D"presentation" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"table-layout:fixed;width:100%;border-coll=
+apse:collapse;border-spacing:0px" align=3D"center" border=3D"0"><tbody><tr>=
+<td style=3D"border:none;text-align:center" align=3D"center"><span><img alt=
+=3D"Image item" width=3D"600" height=3D"auto" src=3D"https://usercontent.st=
+aging.flodesk.com/9145ce68-0714-4855-9ac3-488144ee1132/upload/dividerwavy_1=
+ac159dc-ab84-48ec-a1f9-1c6f5404dd27.png" style=3D"border:none;border-radius=
+:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:1=
+00%;max-width:100%;height:auto"/></span></td></tr></tbody></table></div></t=
+d></tr></tbody></table></div></td></tr></tbody></table></div></div></div><!=
+--[if mso | IE]>
+            </td>
+          </tr>
+        </table>
+      <![endif]--></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333"><table role=3D"presentation" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"font-size:0px;width:100%;background:transparent;c=
+olor:#333333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-al=
+ign:center;vertical-align:middle;direction:ltr;font-size:0px;padding:0px"><=
+div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D"fd-spacer"><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px"><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%"><tbody><tr><td height=3D"20" style=3D"vertica=
+l-align:top"><div style=3D"display:block;font-size:1px;height:20px;line-hei=
+ght:20px;white-space:nowrap">=C2=A0</div></td></tr></tbody></table></td></t=
+r></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-social-outloo=
+k">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333" class=3D"fd-social"><table role=3D"presentation"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;back=
+ground:transparent;color:#333333" align=3D"center" border=3D"0"><tbody><tr>=
+<td style=3D"text-align:center;vertical-align:middle;direction:ltr;font-siz=
+e:0px;padding:10px 0px 10px 0px"><div style=3D"display:block;margin:0"><!--=
+[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr>=
+<td style=3D"word-wrap:break-word;font-size:0px;padding:0px" align=3D"cente=
+r"><div><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" align=3D"undefined"><tr><td>
+      <![endif]--><table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"float:none;display:inline-table" align=3D"center" border=
+=3D"0"><tbody><tr><td style=3D"padding:5px 5px;vertical-align:middle"><tabl=
+e role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"border=
+-radius:0px" border=3D"0"><tbody><tr><td style=3D"font-size:0;vertical-alig=
+n:middle"><a href=3D"https://cbbez3.ff01.fdske.com/e/c/01kbw09tyygycpfrev0a=
+z2x5n1/01kbw09tyygycpfrev0c0pnwxv"><img alt=3D"Visit our Facebook" src=3D"h=
+ttps://usercontent.flodesk.com/assets/social/circle-outline/999999/facebook=
+.png" width=3D"40" height=3D"40" border=3D"0" style=3D"display:block;border=
+-radius:0px;height:40px;width:40px"/></a></td></tr></tbody></table></td></t=
+r></tbody></table><!--[if mso | IE]>
+      </td><td>
+      <![endif]--><table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"float:none;display:inline-table" align=3D"center" border=
+=3D"0"><tbody><tr><td style=3D"padding:5px 5px;vertical-align:middle"><tabl=
+e role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"border=
+-radius:0px" border=3D"0"><tbody><tr><td style=3D"font-size:0;vertical-alig=
+n:middle"><a href=3D"https://cbbez3.ff01.fdske.com/e/c/01kbw09tyygycpfrev0a=
+z2x5n1/01kbw09tyygycpfrev0fx1ep4g"><img alt=3D"Visit our Instagram" src=3D"=
+https://usercontent.flodesk.com/assets/social/circle-outline/999999/instagr=
+am.png" width=3D"40" height=3D"40" border=3D"0" style=3D"display:block;bord=
+er-radius:0px;height:40px;width:40px"/></a></td></tr></tbody></table></td><=
+/tr></tbody></table><!--[if mso | IE]>
+      </td><td>
+      <![endif]--><table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"float:none;display:inline-table" align=3D"center" border=
+=3D"0"><tbody><tr><td style=3D"padding:5px 5px;vertical-align:middle"><tabl=
+e role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"border=
+-radius:0px" border=3D"0"><tbody><tr><td style=3D"font-size:0;vertical-alig=
+n:middle"><a href=3D"https://cbbez3.ff01.fdske.com/e/c/01kbw09tyygycpfrev0a=
+z2x5n1/01kbw09tyygycpfrev0k2v1mr1"><img alt=3D"Visit our LinkedIn" src=3D"h=
+ttps://usercontent.flodesk.com/assets/social/circle-outline/999999/linkedin=
+.png" width=3D"40" height=3D"40" border=3D"0" style=3D"display:block;border=
+-radius:0px;height:40px;width:40px"/></a></td></tr></tbody></table></td></t=
+r></tbody></table><!--[if mso | IE]>
+      </td><td>
+      <![endif]--><table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"float:none;display:inline-table" align=3D"center" border=
+=3D"0"><tbody><tr><td style=3D"padding:5px 5px;vertical-align:middle"><tabl=
+e role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"border=
+-radius:0px" border=3D"0"><tbody><tr><td style=3D"font-size:0;vertical-alig=
+n:middle"><a href=3D"https://cbbez3.ff01.fdske.com/e/c/01kbw09tyygycpfrev0a=
+z2x5n1/01kbw09tyygycpfrev0pb9y5yx"><img alt=3D"Visit our Twitter" src=3D"ht=
+tps://usercontent.flodesk.com/assets/social/circle-outline/999999/twitter.p=
+ng" width=3D"40" height=3D"40" border=3D"0" style=3D"display:block;border-r=
+adius:0px;height:40px;width:40px"/></a></td></tr></tbody></table></td></tr>=
+</tbody></table><!--[if mso | IE]>
+      </td><td>
+      <![endif]--><table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"float:none;display:inline-table" align=3D"center" border=
+=3D"0"><tbody><tr><td style=3D"padding:5px 5px;vertical-align:middle"><tabl=
+e role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"border=
+-radius:0px" border=3D"0"><tbody><tr><td style=3D"font-size:0;vertical-alig=
+n:middle"><a href=3D"https://cbbez3.ff01.fdske.com/e/c/01kbw09tyygycpfrev0a=
+z2x5n1/01kbw09tyygycpfrev0qjxfaxv"><img alt=3D"Visit our Youtube" src=3D"ht=
+tps://usercontent.flodesk.com/assets/social/circle-outline/999999/youtube.p=
+ng" width=3D"40" height=3D"40" border=3D"0" style=3D"display:block;border-r=
+adius:0px;height:40px;width:40px"/></a></td></tr></tbody></table></td></tr>=
+</tbody></table><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div></div></div><!--[if=
+ mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-address-outlo=
+ok">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333" class=3D"fd-address"><table role=3D"presentation=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;bac=
+kground:transparent;color:#333333" align=3D"center" border=3D"0"><tbody><tr=
+><td style=3D"text-align:center;vertical-align:middle;direction:ltr;font-si=
+ze:0px;padding:10px 10px 10px 10px"><div style=3D"display:block;margin:0"><=
+!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr>=
+<td style=3D"word-wrap:break-word;font-size:0px"><div><table role=3D"presen=
+tation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"table-lay=
+out:fixed;width:100%"><tbody><tr><td style=3D"word-wrap:break-word;font-siz=
+e:0px;padding:0px" align=3D"center"><div style=3D"cursor:auto;color:#797979=
+;font-family:Helvetica, sans-serif;font-size:11px;font-weight:400;line-heig=
+ht:1.8;letter-spacing:0px;text-align:center;text-transform:none">Platinum A=
+maltash, 1104 (A Block)<br/>Jaipur, Rajasthan 302012, India</div></td></tr>=
+</tbody></table></div></td></tr></tbody></table></div></div></div><!--[if m=
+so | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-footer-outloo=
+k">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333" class=3D"fd-footer"><table role=3D"presentation"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;back=
+ground:transparent;color:#333333" align=3D"center" border=3D"0"><tbody><tr>=
+<td style=3D"text-align:center;vertical-align:middle;direction:ltr;font-siz=
+e:0px;padding:10px 10px 10px 10px"><div style=3D"display:block;margin:0"><!=
+--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr>=
+<td style=3D"word-wrap:break-word;font-size:0px"><div><table role=3D"presen=
+tation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"table-lay=
+out:fixed;width:100%"><tbody><tr class=3D"is-underlined"><td style=3D"word-=
+wrap:break-word;font-size:0px;padding:0px" align=3D"center"><div style=3D"c=
+ursor:auto;color:#797979;font-family:Helvetica, sans-serif;font-size:11px;f=
+ont-weight:400;line-height:1.8;letter-spacing:0px;text-align:center;text-tr=
+ansform:none"><p><a data-link=3D"unsubscribe" href=3D"https://form.flodesk.=
+com/preferences/RzhMaVNILTVLQWxZR2s1MndXVnJOU1hmUURsSlh4N1drNmFHVTI0diZHa21=
+UdW83VkxhR1VEJmNWeGpWSGsyM3hXT2VXS1hiU3ZkUks2WG5XYUxyWUwxZUtKaklGaj0zclJOY0=
+5CMmpTSDMuS2kuNnVRLmdQRTI/unsubscribe" clicktracking=3D"off" ses:no-track=
+=3D"">Unsubscribe</a> or <a data-link=3D"preferences" href=3D"https://form.=
+flodesk.com/preferences/RzhMaVNILTVLQWxZR2s1MndXVnJOU1hmUURsSlhBNldBVlhlV08=
+0aVJGOVV4ODg9dlVVY1FLNzRJWnk4dWxhMERYTXFXQjJoT0YzUHc2PVVFJlVvR1Q3Z0xJNk9KYT=
+FYRQ" clicktracking=3D"off" ses:no-track=3D"">Manage Preferences</a> here. =
+No hard feelings!</p></div></td></tr></tbody></table></div></td></tr></tbod=
+y></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333"><table role=3D"presentation" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"font-size:0px;width:100%;background:transparent;c=
+olor:#333333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-al=
+ign:center;vertical-align:middle;direction:ltr;font-size:0px;padding:0px"><=
+div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D"fd-spacer"><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px"><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%"><tbody><tr><td height=3D"40" style=3D"vertica=
+l-align:top"><div style=3D"display:block;font-size:1px;height:40px;line-hei=
+ght:40px;white-space:nowrap">=C2=A0</div></td></tr></tbody></table></td></t=
+r></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></div>
+
+<img alt=3D"" src=3D"https://cbbez3.ff01.fdske.com/e/o/01kbw09tyygycpfrev0a=
+z2x5n1" style=3D"display:none!important; width:1px!important; height:1px!im=
+portant"/></body></html>
