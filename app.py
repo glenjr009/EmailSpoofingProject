@@ -368,58 +368,118 @@ HTML = """
 @app.route("/", methods=["GET", "POST"])
 def index():
     results = []
+
     if request.method == "POST":
-        for file in request.files.getlist("email_files"):
-            if file.filename == '': continue
-            
+        files = request.files.getlist("email_files")
+
+        for file in files:
+            if file.filename == "":
+                continue
+
             try:
-                raw = file.read().decode(errors="ignore")
+                raw_bytes = file.read()
+                raw = raw_bytes.decode(errors="ignore")
+
                 msg = email.message_from_string(raw)
                 body = get_email_body(msg)
-                
-                output = analyze_email(msg, body, raw)
-                
+
+                analysis = analyze_email(msg, body, raw_bytes)
+
                 results.append({
                     "filename": file.filename,
-                    "subject": msg.get("Subject", "No Subject"),
-                    "score": output.get("score", 0),
-                    "auth_score": output.get("auth_score", 0),
-                    "header_score": output.get("header_score", 0),
-                    "content_score": output.get("content_score", 0),
-                    "label": output.get("label", "UNKNOWN"),
-                    "reasons": output.get("reasons", [])
-                })
-            except Exception as e:
-                print(f"Error processing {file.filename}: {e}")
-        
-        session["results"] = results
-    
-    results = session.get("results", [])
-    return render_template_string(HTML, results=results)
+                    "subject": msg.get("Subject", "(No Subject)"),
 
+                    "score": analysis["score"],
+                    "auth_score": analysis["auth_score"],
+                    "header_score": analysis["header_score"],
+                    "content_score": analysis["content_score"],
+                    "label": analysis["label"],
+
+                    "spf_result": analysis["spf_result"],
+                    "spf_reason": analysis["spf_reason"],
+                    "dkim_result": analysis["dkim_result"],
+                    "dkim_reason": analysis["dkim_reason"],
+                    "dmarc_result": analysis["dmarc_result"],
+                    "dmarc_reason": analysis["dmarc_reason"],
+
+                    "identity_issues": analysis["identity_issues"],
+                    "header_issues": analysis["header_issues"],
+                    "content_issues": analysis["content_issues"],
+                    "reasons": analysis["reasons"]
+                })
+
+            except Exception as e:
+                # FIXED INDENTATION HERE ↓↓↓
+                results.append({
+                    "filename": file.filename,
+                    "subject": "Error reading",
+                    "score": "-",
+                    "label": "ERROR",
+                    "auth_score": "-",
+                    "header_score": "-",
+                    "content_score": "-",
+                    "spf_result": "error",
+                    "spf_reason": str(e),
+                    "dkim_result": "error",
+                    "dkim_reason": str(e),
+                    "dmarc_result": "error",
+                    "dmarc_reason": str(e),
+                    "identity_issues": [],
+                    "header_issues": [],
+                    "content_issues": [],
+                    "reasons": [str(e)]
+                })
+
+        session["results"] = results
+
+    return render_template_string(HTML, results=results)
 @app.route("/download_csv")
 def download_csv():
     results = session.get("results", [])
-    
+
     if not results:
-        return "No analysis data found in session."
-        
-    out = io.StringIO()
-    w = csv.writer(out)
-    w.writerow(["File", "Subject", "Score", "Auth Score", "Header Score", "Content Score", "Label", "Reasons"])
+        return "No results available to download", 400
+
+    output = io.StringIO()
+    writer = csv.writer(output)
+
+    writer.writerow([
+        "File Name", 
+        "Subject", 
+        "Total Score", 
+        "Auth Score", 
+        "Header Score", 
+        "Content Score",
+        "SPF Result",
+        "DKIM Result",
+        "DMARC Result",
+        "Reasons"
+    ])
+
     for r in results:
-        w.writerow([
-            r["filename"], 
-            r["subject"], 
-            r["score"], 
-            r["auth_score"], 
-            r.get("header_score", 0),
-            r.get("content_score", 0), 
-            r["label"], 
-            "; ".join(r["reasons"])
+        reasons_text = "; ".join(r.get("reasons", []))
+
+        writer.writerow([
+            r.get("filename", ""),
+            r.get("subject", ""),
+            r.get("score", ""),
+            r.get("auth_score", ""),
+            r.get("header_score", ""),
+            r.get("content_score", ""),
+            r.get("spf_result", ""),
+            r.get("dkim_result", ""),
+            r.get("dmarc_result", ""),
+            reasons_text
         ])
-    out.seek(0)
-    return send_file(io.BytesIO(out.getvalue().encode()), as_attachment=True, download_name="scan_report.csv", mimetype="text/csv")
+
+    output.seek(0)
+
+    return send_file(
+        io.BytesIO(output.getvalue().encode()),
+        mimetype="text/csv",
+        as_attachment=True,
+        download_name="email_analysis_results.csv"
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)
